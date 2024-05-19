@@ -1,525 +1,432 @@
-<!-- PHP INCLUDES -->
+<?php 
+	session_start();
 
-<?php
+	//Check If user is already logged in
+	if(isset($_SESSION['username_barbershop_Xw211qAAsq4']) && isset($_SESSION['password_barbershop_Xw211qAAsq4']))
+	{
+        //Page Title
+        $pageTitle = 'Dashboard';
 
-    include "connect.php";
-    include "Includes/header.php";
-    include "Includes/navbar.php";
+        //Includes
+        include 'connect.php';
+        include 'Includes/functions.php'; 
+        include 'Includes/header.php';
 
 ?>
+	<!-- Begin Page Content -->
+	<div class="container-fluid">
+		
+		<!-- Page Heading -->
+		<div class="d-sm-flex align-items-center justify-content-between mb-4">
+			<h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+			<!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+				<i class="fas fa-download fa-sm text-white-50"></i>
+				Generate Report
+			</a> -->
+		</div>
 
-<!-- BOOKING SECTION -->
+		<!-- Content Row -->
+		<div class="row">
 
-<section class="book_section" id="booking">
-    <div class="book_bg"></div>
-    <div class="map_pattern"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-6">
-                <form action="appointment.php" method="post" id="appointment_form"
-                    class="form-horizontal appointment_form">
-                    <div class="book_content" style="text-align:right;">
-                        <h2 style="color: white;">احجز موعدًا</h2>
-                        <p style="color: #999;">
+			<div class="col-xl-3 col-md-6 mb-4">
+				<div class="card border-left-primary shadow h-100 py-2">
+					<div class="card-body">
+				  		<div class="row no-gutters align-items-center">
+							<div class="col mr-2">
+					  			<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+					  				Total Clients
+					  			</div>
+					  			<div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo countItems("client_id","clients")?></div>
+							</div>
+							<div class="col-auto">
+					  			<i class="bs bs-boy fa-2x text-gray-300"></i>
+							</div>
+				  		</div>
+					</div>
+			  	</div>
+			</div>
 
-                        </p>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-6 padding-10">
-                            <P style="color: white;text-align:right;">التاريخ</P>
-                            <input type="date" class="form-control">
-                        </div>
-                        <div class="col-md-6 padding-10">
-                            <P style="color: white;text-align:right;">الساعة</P>
-                            <input type="time" class="form-control">
-                        </div>
-                    </div>
+			<div class="col-xl-3 col-md-6 mb-4">
+				<div class="card border-left-success shadow h-100 py-2">
+					<div class="card-body">
+				  		<div class="row no-gutters align-items-center">
+							<div class="col mr-2">
+					  			<div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+					  				Total Services
+					  			</div>
+					  			<div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo countItems("service_id","services")?></div>
+							</div>
+							<div class="col-auto">
+					  			<i class="bs bs-scissors-1 fa-2x text-gray-300"></i>
+							</div>
+				  		</div>
+					</div>
+			  	</div>
+			</div>
 
-                    <!-- SUBMIT BUTTON -->
+			<div class="col-xl-3 col-md-6 mb-4">
+				<div class="card border-left-info shadow h-100 py-2">
+					<div class="card-body">
+				  		<div class="row no-gutters align-items-center">
+							<div class="col mr-2">
+					  			<div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+					  				Employees
+					  			</div>
+					  			<div class="row no-gutters align-items-center">
+									<div class="col-auto">
+						  				<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo countItems("employee_id","employees")?></div>
+									</div>
+					  			</div>
+							</div>
+							<div class="col-auto">
+					  			<i class="bs bs-man fa-2x text-gray-300"></i>
+							</div>
+				  		</div>
+					</div>
+			  	</div>
+			</div>
 
-                    <button id="app_submit" class="default_btn" type="submit">احجز موعدًا</button>
-                </form>
+			<div class="col-xl-3 col-md-6 mb-4">
+				<div class="card border-left-warning shadow h-100 py-2">
+					<div class="card-body">
+				  		<div class="row no-gutters align-items-center">
+							<div class="col mr-2">
+					  			<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+					  				Appointments
+					  			</div>
+					  			<div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo countItems("appointment_id","appointments")?></div>
+							</div>
+							<div class="col-auto">
+					  			<i class="fas fa-calendar fa-2x text-gray-300"></i>
+							</div>
+				 		</div>
+					</div>
+			  	</div>
+			</div>
+		</div>
+
+		<!-- Appointment Tables -->
+        <div class="card shadow mb-4">
+            <div class="card-header tab" style="padding: 0px !important;background: #36b9cc!important">
+            	<button class="tablinks active" onclick="openTab(event, 'Upcoming')">
+            		Upcoming Bookings
+            	</button>
+                <button class="tablinks" onclick="openTab(event, 'All')">
+                	All Bookings
+                </button>
+                <button class="tablinks" onclick="openTab(event, 'Canceled')">
+                	Canceled Bookings
+                </button>
+            </div>
+            <div class="card-body">
+            	<div class="table-responsive">
+                	<table class="table table-bordered tabcontent" id="Upcoming" style="display:table" width="100%" cellspacing="0">
+                  		<thead>
+                                <tr>
+                                    <th>
+                                        Start Time
+                                    </th>
+                                    <th>
+                                        Booked Services
+                                    </th>
+                                    <th>
+                                        End Time Expected
+                                    </th>
+                                    <th>
+                                        Client
+                                    </th>
+                                    <th>
+                                        Employee
+                                    </th>
+                                    <th>
+                                        Manage
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <?php
+                                    $stmt = $con->prepare("SELECT * 
+                                                    FROM appointments a , clients c
+                                                    where start_time >= ?
+                                                    and a.client_id = c.client_id
+                                                    and canceled = 0
+                                                    order by start_time;
+                                                    ");
+                                    $stmt->execute(array(date('Y-m-d H:i:s')));
+                                    $rows = $stmt->fetchAll();
+                                    $count = $stmt->rowCount();
+                                    
+                                    
+
+                                    if($count == 0)
+                                    {
+
+                                        echo "<tr>";
+                                            echo "<td colspan='5' style='text-align:center;'>";
+                                                echo "List of your upcoming bookings will be presented here";
+                                            echo "</td>";
+                                        echo "</tr>";
+                                    }
+                                    else
+                                    {
+
+                                        foreach($rows as $row)
+                                        {
+                                            echo "<tr>";
+                                                echo "<td>";
+                                                    echo $row['start_time'];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                    $stmtServices = $con->prepare("SELECT service_name
+                                                            from services s, services_booked sb
+                                                            where s.service_id = sb.service_id
+                                                            and appointment_id = ?");
+                                                    $stmtServices->execute(array($row['appointment_id']));
+                                                    $rowsServices = $stmtServices->fetchAll();
+                                                    foreach($rowsServices as $rowsService)
+                                                    {
+                                                        echo "- ".$rowsService['service_name'];
+                                                        if (next($rowsServices)==true)  echo " <br> ";
+                                                    }
+                                                echo "</td>";
+                                                echo "<td>";
+                                                    echo $row['end_time_expected'];
+                                            
+                                                echo "</td>";
+                                                echo "<td>";
+                                                    echo "<a href = clients.php>";
+                                                        echo $row['client_id'];
+                                                    echo "</a>";
+                                                echo "</td>";
+                                                echo "<td>";
+                                                    $stmtEmployees = $con->prepare("SELECT first_name,last_name
+                                                            from employees e, appointments a
+                                                            where e.employee_id = a.employee_id
+                                                            and a.appointment_id = ?");
+                                                    $stmtEmployees->execute(array($row['appointment_id']));
+                                                    $rowsEmployees = $stmtEmployees->fetchAll();
+                                                    foreach($rowsEmployees as $rowsEmployee)
+                                                    {
+                                                        echo $rowsEmployee['first_name']." ".$rowsEmployee['last_name'];
+                                                        
+                                                    }
+                                                echo "</td>";
+                                                
+                                                echo "<td>";
+                                                	$cancel_data = "cancel_appointment_".$row["appointment_id"];
+                                               		?>
+                                               		<ul class="list-inline m-0">
+
+                                                        <!-- CANCEL BUTTON -->
+
+                                                        <li class="list-inline-item" data-toggle="tooltip" title="Cancel Appointment">
+                                                            <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="modal" data-target="#<?php echo $cancel_data; ?>" data-placement="top">
+                                                                <i class="fas fa-calendar-times"></i>
+                                                            </button>
+
+                                                            <!-- CANCEL MODAL -->
+                                                            <div class="modal fade" id="<?php echo $cancel_data; ?>" tabindex="-1" role="dialog" aria-labelledby="<?php echo $cancel_data; ?>" aria-hidden="true">
+                                                                <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title">Cancel Appointment</h5>
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <p>Are you sure you want to cancel this appointment?</p>
+                                                                            <div class="form-group">
+                                                                                <label>Tell Us Why?</label>
+                                                                                <textarea class="form-control" id=<?php echo "appointment_cancellation_reason_".$row['appointment_id'] ?>></textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                                                            <button type="button" data-id = "<?php echo $row['appointment_id']; ?>" class="btn btn-danger cancel_appointment_button">Yes, Cancel</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </li>
+                                                    </ul>
+
+                                               		<?php
+                                                echo "</td>";
+                                            echo "</tr>";
+                                        }
+                                    }
+
+                                ?>
+
+                            </tbody>
+                	</table>
+                	<table class="table table-bordered tabcontent" id="All" width="100%" cellspacing="0">
+                  		<thead>
+                            <tr>
+                                <th>
+                                    Start Time
+                                </th>
+                                <th>
+                                    Booked Services
+                                </th>
+                                <th>
+                                    End Time Expected
+                                </th>
+                                <th>
+                                    Client
+                                </th>
+                                <th>
+                                    Employee
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <?php
+                                $stmt = $con->prepare("SELECT * 
+                                                FROM appointments a , clients c
+                                                where a.client_id = c.client_id
+                                                order by start_time;
+                                                ");
+                                $stmt->execute(array());
+                                $rows = $stmt->fetchAll();
+                                $count = $stmt->rowCount();
+
+                                if($count == 0)
+                                {
+
+                                    echo "<tr>";
+                                        echo "<td colspan='5' style='text-align:center;'>";
+                                            echo "List of your all bookings will be presented here";
+                                        echo "</td>";
+                                    echo "</tr>";
+                                }
+                                else
+                                {
+
+                                    foreach($rows as $row)
+                                    {
+                                        echo "<tr>";
+                                            echo "<td>";
+                                                echo $row['start_time'];
+                                            echo "</td>";
+                                            echo "<td>";
+                                                $stmtServices = $con->prepare("SELECT service_name
+                                                        from services s, services_booked sb
+                                                        where s.service_id = sb.service_id
+                                                        and appointment_id = ?");
+                                                $stmtServices->execute(array($row['appointment_id']));
+                                                $rowsServices = $stmtServices->fetchAll();
+                                                foreach($rowsServices as $rowsService)
+                                                {
+                                                    echo $rowsService['service_name'];
+                                                    if (next($rowsServices)==true)  echo " + ";
+                                                }
+                                            echo "</td>";
+                                            echo "<td>";
+                                                echo $row['end_time_expected'];
+                                        
+                                            echo "</td>";
+                                            echo "<td>";
+                                                echo $row['last_name'];
+                                            echo "</td>";
+                                            echo "<td>";
+                                                $stmtEmployees = $con->prepare("SELECT first_name,last_name
+                                                        from employees e, appointments a
+                                                        where e.employee_id = a.employee_id
+                                                        and a.appointment_id = ?");
+                                                $stmtEmployees->execute(array($row['appointment_id']));
+                                                $rowsEmployees = $stmtEmployees->fetchAll();
+                                                foreach($rowsEmployees as $rowsEmployee)
+                                                {
+                                                    echo $rowsEmployee['first_name']." ".$rowsEmployee['last_name'];
+                                                    
+                                                }
+                                            echo "</td>";
+                                        echo "</tr>";
+                                    }
+                                }
+                            ?>
+                        </tbody>
+                	</table>
+                	<table class="table table-bordered tabcontent" id="Canceled" width="100%" cellspacing="0">
+                  		<thead>
+                            <tr>
+                                <th>
+                                    Start Time
+                                </th>
+                                <th>
+                                    Client
+                                </th>
+                                <th>
+                                    Cancellation Reason
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <?php
+                                $stmt = $con->prepare("SELECT * 
+                                                FROM appointments a , clients c
+                                                where canceled = 1
+                                                and a.client_id = c.client_id
+                                                ");
+                                $stmt->execute(array());
+                                $rows = $stmt->fetchAll();
+                                $count = $stmt->rowCount();
+
+                                if($count == 0)
+                                {
+
+                                    echo "<tr>";
+                                        echo "<td colspan='5' style='text-align:center;'>";
+                                            echo "List of your canceled bookings will be presented here";
+                                        echo "</td>";
+                                    echo "</tr>";
+                                }
+                                else
+                                {
+
+                                    foreach($rows as $row)
+                                    {
+                                        echo "<tr>";
+                                            echo "<td>";
+                                                echo $row['start_time'];
+                                            echo "</td>";
+                                            echo "<td>";
+                                                echo $row['last_name'];
+                                            echo "</td>";
+                                            echo "<td>";
+                                                
+                                                echo $row['cancellation_reason'];
+                                                    
+                                            echo "</td>";
+                                        echo "</tr>";
+                                    }
+                                }
+
+                            ?>
+
+                        </tbody>
+                	</table>
+              	</div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- ABOUT SECTION -->
-
-<section id="about" class="about_section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="about_content" style="text-align: center;">
-
-                    <h2>Barber Top</h2>
-                    <img src="Design/images/about-logo.png" alt="logo">
-                    <p style="color: #777">
-                        Barber is a person whose occupation is mainly to cut dress groom style and shave men's and boys'
-                        hair. A barber's place of work is known as a "barbershop" or a "barber's". Barbershops are also
-                        places of social interaction and public discourse. In some instances, barbershops are also
-                        public forums.
-                    </p>
-                    <a href="#" class="default_btn" style="opacity: 1;">More about us</a>
-                </div>
-            </div>
-            <div class="col-md-6  d-none d-md-block">
-                <div class="about_img" style="overflow:hidden">
-                    <img class="about_img_1" src="Design/images/about-1.jpg" alt="about-1">
-                    <img class="about_img_2" src="Design/images/about-2.jpg" alt="about-2">
-                    <img class="about_img_3" src="Design/images/about-3.jpg" alt="about-3">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- HOME SECTION -->
-
-<section class="home-section height90vh" id="home-section">
-    <div class="home-section-content height90vh">
-        <div id="home-section-carousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#home-section-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#home-section-carousel" data-slide-to="1"></li>
-                <li data-target="#home-section-carousel" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner height90vh">
-                <!-- FIRST SLIDE -->
-                <div class="carousel-item height90vh active">
-                    <img class="d-block w-100 slideimg1" src="Design/images/barbershop_image_1.jpg" alt="First slide">
-                    <div class="carousel-caption d-md-block">
-                        <h3>It's Not Just a Haircut, It's an Experience.</h3>
-                        <p>
-                            Our barbershop is the territory created purely for males who appreciate
-                            <br>
-                            premium quality, time and flawless look.
-                        </p>
-                    </div>
-                </div>
-                <!-- SECOND SLIDE -->
-                <div class="carousel-item height90vh">
-                    <img class="d-block w-100 slideimg1" src="Design/images/barbershop_image_2.jpg" alt="Second slide">
-                    <div class="carousel-caption d-md-block">
-                        <h3>It's Not Just a Haircut, It's an Experience.</h3>
-                        <p>
-                            Our barbershop is the territory created purely for males who appreciate
-                            <br>
-                            premium quality, time and flawless look.
-                        </p>
-                    </div>
-                </div>
-                <!-- THIRD SLIDE -->
-                <div class="carousel-item height90vh">
-                    <img class="d-block w-100 slideimg1" src="Design/images/barbershop_image_3.jpg" alt="Third slide">
-                    <div class="carousel-caption d-md-block">
-                        <h3>It's Not Just a Haircut, It's an Experience.</h3>
-                        <p>
-                            Our barbershop is the territory created purely for males who appreciate
-                            <br>
-                            premium quality, time and flawless look.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- PREVIOUS & NEXT -->
-            <a class="carousel-control-prev height90vh" href="#home-section-carousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next height90vh" href="#home-section-carousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- SERVICES SECTION -->
-
-<section class="services_section" id="services">
-    <div class="container">
-        <div class="section_heading">
-
-            <!-- <h2>Our Services</h2> -->
-            <div class="heading-line"></div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6 padd_col_res">
-                <div class="service_box">
-                    <i class="bs bs-scissors-1"></i>
-                    <h3>قص الشعر</h3>
-
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 padd_col_res">
-                <div class="service_box">
-                    <i class="bs bs-razor-2"></i>
-                    <h3>تشذيب اللحية</h3>
-
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 padd_col_res">
-                <div class="service_box">
-                    <i class="bs bs-brush"></i>
-                    <h3>حلاقة ناعمة</h3>
-
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 padd_col_res">
-                <div class="service_box">
-                    <i class="bs bs-hairbrush-1"></i>
-                    <h3>ماسك للوجه</h3>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PRICING SECTION  -->
-
-<section class="pricing_section" id="pricing" style="text-align:right;">
-
-    <!-- START GET CATEGORIES PRICES FROM DATABASE -->
-
-    <?php
-
-        $stmt = $con->prepare("Select * from service_categories");
-        $stmt->execute();
-        $categories = $stmt->fetchAll();
-
-    ?>
-
-    <!-- END -->
-
-    <div class="container">
-        <div class="section_heading">
-            <h2>خدماتنا</h2>
-            <div class="heading-line"></div>
-        </div>
-        <div class="row">
-            <?php
-
-                foreach($categories as $category)
-                {
-                    $stmt = $con->prepare("Select * from services where category_id = ?");
-                    $stmt->execute(array($category['category_id']));
-                    $totalServices =  $stmt->rowCount();
-                    $services = $stmt->fetchAll();
-
-                    if($totalServices > 0)
-                    {
-            ?>
-
-            <div class="col-lg-4 col-md-6 sm-padding">
-                <div class="price_wrap">
-                    <h3><?php echo $category['category_name'] ?></h3>
-                    <ul class="price_list">
-                        <?php
-
-                            foreach($services as $service)
-                            {
-                        ?>
-
-                        <li>
-                            <h4><?php echo $service['service_name'] ?></h4>
-                            <p><?php echo $service['service_description'] ?></p>
-                            <span class="price"><?php echo $service['service_price'] ?>DH</span>
-                        </li>
-
-                        <?php
-                            }
-
-                        ?>
-
-                    </ul>
-                </div>
-            </div>
-
-            <?php
-                    }
-                }
-
-            ?>
-
-        </div>
-    </div>
-</section>
-
-<!-- GALLERY SECTION -->
-
-<section class="gallery-section" id="gallery">
-    <div class="section_heading">
-
-        <h2>عرض الصور</h2>
-        <div class="heading-line"></div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 gallery-column">
-                <div style="height: 230px">
-                    <div class="gallery-img" style="background-image: url('Design/images/portfolio-1.jpg');"> </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 gallery-column">
-                <div style="height: 230px">
-                    <div class="gallery-img" style="background-image: url('Design/images/portfolio-2.jpg');"></div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 gallery-column">
-                <div style="height: 230px">
-                    <div class="gallery-img" style="background-image: url('Design/images/portfolio-3.jpg');"></div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 gallery-column">
-                <div style="height: 230px">
-                    <div class="gallery-img" style="background-image: url('Design/images/portfolio-4.jpg');"></div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 gallery-column">
-                <div style="height: 230px">
-                    <div class="gallery-img" style="background-image: url('Design/images/portfolio-5.jpg');"></div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 gallery-column">
-                <div style="height: 230px">
-                    <div class="gallery-img" style="background-image: url('Design/images/portfolio-6.jpg');"></div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 gallery-column">
-                <div style="height: 230px">
-                    <div class="gallery-img" style="background-image: url('Design/images/portfolio-7.jpg');"></div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 gallery-column">
-                <div style="height: 230px">
-                    <div class="gallery-img" style="background-image: url('Design/images/portfolio-8.jpg');"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- TEAM SECTION -->
-
-<section id="team" class="team_section">
-    <div class="container">
-        <div class="section_heading ">
-            <h2>فريقنا</h2>
-            <div class="heading-line"></div>
-        </div>
-        <ul class="team_members row">
-            <li class="col-lg-3 col-md-6 padd_col_res">
-                <div class="team_member">
-                    <img src="Design/images/team-1.jpg" alt="Team Member">
-                </div>
-            </li>
-            <li class="col-lg-3 col-md-6 padd_col_res">
-                <div class="team_member">
-                    <img src="Design/images/team-2.jpg" alt="Team Member">
-                </div>
-            </li>
-            <li class="col-lg-3 col-md-6 padd_col_res">
-                <div class="team_member">
-                    <img src="Design/images/team-3.jpg" alt="Team Member">
-                </div>
-            </li>
-            <li class="col-lg-3 col-md-6 padd_col_res">
-                <div class="team_member">
-                    <img src="Design/images/team-4.jpg" alt="Team Member">
-                </div>
-            </li>
-        </ul>
-    </div>
-</section>
-
-<!-- REVIEWS SECTION -->
-
-<!-- <section id="reviews" class="testimonial_section">
-        <div class="container">
-            <div id="reviews-carousel" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#reviews-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#reviews-carousel" data-slide-to="1"></li>
-                    <li data-target="#reviews-carousel" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="Design/images/barbershop_image_1.jpg" alt="First slide" style="visibility: hidden;">
-                        <div class="carousel-caption d-md-block">
-                            <h3>ليست مجرد قصة شعر انها تجربة</h3>
-                            <p>
-                                Our barbershop is the territory created purely for males who appreciate
-                                <br>
-                                premium quality, time and flawless look.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="Design/images/barbershop_image_1.jpg" alt="First slide"  style="visibility: hidden;">
-                        <div class="carousel-caption d-md-block">
-                            <h3>ليست مجرد قصة شعر انها تجربة</h3>
-                            <p>
-                                Our barbershop is the territory created purely for males who appreciate
-                                <br>
-                                premium quality, time and flawless look.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="Design/images/barbershop_image_1.jpg" alt="First slide"  style="visibility: hidden;">
-                        <div class="carousel-caption d-md-block">
-                            <h3>ليست مجرد قصة شعر انها تجربة</h3>
-                            <p>
-                                Our barbershop is the territory created purely for males who appreciate
-                                <br>
-                                premium quality, time and flawless look.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <a class="carousel-control-prev" href="#reviews-carousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#reviews-carousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
-    </section> -->
+	</div>
 
 
-<!-- CONTACT SECTION -->
+<?php
+        
+		//Include Footer
+		include 'Includes/footer.php';
+	}
+	else
+    {
+    	header('Location: login.php');
+        exit();
+    }
 
-<section class="contact-section" id="contact-us" style="text-align:right;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 sm-padding">
-                <div class="contact-info">
-                    <h2>
-                        تواصل معنا و <br>
-                        أرسل لنا رسالة اليوم!
-                    </h2>
-
-                    <h4>
-                        <span style="font-weight: bold">Email:</span>
-                        barbertop@barbertop.com
-                        <br>
-                        <span style="font-weight: bold">Phone:</span>
-                        +212 522525252
-                    </h4>
-                </div>
-            </div>
-            <div class="col-lg-6 sm-padding">
-                <div class="contact-form">
-                    <div id="contact_ajax_form" class="contactForm">
-                        <div class="form-group colum-row row">
-                            <div class="col-sm-6">
-                                <input type="text" id="contact_name" name="name" class="form-control"
-                                    placeholder="الاسم">
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="email" id="contact_email" name="email" class="form-control"
-                                    placeholder="البريد الالكتروني">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-md-12">
-                                <input type="text" id="contact_subject" name="subject" class="form-control"
-                                    placeholder="الموضوع">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-md-12">
-                                <textarea id="contact_message" name="message" cols="30" rows="5"
-                                    class="form-control message" placeholder="الرسالة"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group row" style="text-align:left;">
-                            <div class="col-md-12">
-                                <button id="contact_send" class="default_btn">ارسال الرسالة</button>
-                            </div>
-                        </div>
-                        <img src="Design/images/ajax_loader_gif.gif" id="contact_loader" style="display: none">
-                        <div id="contact_status_message"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- WIDGET SECTION / FOOTER -->
-
-<section class="widget_section" style="text-align:right">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="footer_widget">
-                    <img src="Design/images/barbershop_logo.png" alt="Brand">
-                    <p>
-
-                    </p>
-                    <ul class="widget_social">
-                        <li><a href="#" data-toggle="tooltip" title="Facebook"><i
-                                    class="fab fa-facebook-f fa-2x"></i></a></li>
-                        <li><a href="#" data-toggle="tooltip" title="Twitter"><i class="fab fa-twitter fa-2x"></i></a>
-                        </li>
-                        <li><a href="#" data-toggle="tooltip" title="Instagram"><i
-                                    class="fab fa-instagram fa-2x"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="footer_widget">
-                    <h3>العنوان</h3>
-                    <p>
-                        شارع محمد الخامس رقم 425 - طنجة
-                    </p>
-                    <p style="text-align:left;direction:left">
-                        barbertop@barbertop.com
-                        <br>
-                        Phone: +212 522525252
-                    </p>
-                </div>
-            </div>
-            <!-- <div class="col-lg-4 col-md-6">
-                    <div class="footer_widget">
-                        <h3>
-                            Opening Hours
-                        </h3>
-                        <ul class="opening_time">
-                            <li>Monday - Friday 11:30am - 2:008pm</li>
-                            <li>Monday - Friday 11:30am - 2:008pm</li>
-                            <li>Monday - Friday 11:30am - 2:008pm</li>
-                            <li>Monday - Friday 11:30am - 2:008pm</li>
-                        </ul>
-                    </div>
-                </div> -->
-            <div class="col-lg-4 col-md-6">
-                <div class="footer_widget">
-                    <h3>اشترك معنا</h3>
-                    <div class="subscribe_form">
-                        <form action="#" class="subscribe_form" novalidate="true">
-                            <input type="email" name="EMAIL" id="subs-email" class="form_input"
-                                placeholder="البريد الالكتروني ...">
-                            <button type="submit" class="submit">اشترك</button>
-                            <div class="clearfix"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER  -->
-
-<?php include "Includes/footer.php"; ?>
+?>

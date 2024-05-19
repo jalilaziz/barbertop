@@ -1,5 +1,5 @@
 <?php
-    $servername = 'mysql:host=localhost;dbname=barbershop';
+    $dsn = 'mysql:host=localhost;dbname=barbershop';
 	$user = 'root';
 	$pass = '';
 	$option = array(
@@ -7,13 +7,13 @@
 	);
 	try
 	{
-		$con = new PDO($servername,$user,$pass,$option);
+		$con = new PDO($dsn,$user,$pass,$option);
 		$con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-		//echo 'Good Very Good !';
+		// echo 'Good Very Good !';
 	}
-	catch(PDOException $e)
+	catch(PDOException $ex)
 	{
-		echo "Failed to connect with database ! ".$e->getMessage();
+		echo "Failed to connect with database ! ".$ex->getMessage();
 		die();
 	}
 ?>
