@@ -46,11 +46,8 @@
 	}
 
 	/*
-		==============================================
 		TEST INPUT FUNCTION, IS USED FOR SANITIZING USER INPUTS
 		AND REMOVE SUSPICIOUS CHARS and Remove Extra Spaces
-		==============================================
-
 	*/
 
 	function test_input($data) 

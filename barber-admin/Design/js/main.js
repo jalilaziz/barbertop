@@ -67,7 +67,7 @@ $('.cancel_appointment_button').click(function()
 
 
     $.ajax({
-        url: "ajax_files/appointments_ajax.php",
+        url: "edit/appointments_cancel.php",
         type: "POST",
         data:{do:do_,appointment_id:appointment_id,cancellation_reason:cancellation_reason},
         success: function (data) 
@@ -106,7 +106,7 @@ $('#add_category_bttn').click(function()
     {
         $.ajax(
         {
-            url:"ajax_files/service_categories_ajax.php",
+            url:"edit/service_categories_edit.php",
             method:"POST",
             data:{category_name:category_name,do:do_},
             dataType:"JSON",
@@ -144,7 +144,7 @@ $('.delete_category_bttn').click(function()
 
     $.ajax(
     {
-        url:"ajax_files/service_categories_ajax.php",
+        url:"edit/service_categories_edit.php",
         method:"POST",
         data:{category_id:category_id,action:action},
         dataType:"JSON",
@@ -186,7 +186,7 @@ $('.edit_category_bttn').click(function()
     {
         $.ajax(
         {
-            url:"ajax_files/service_categories_ajax.php",
+            url:"edit/service_categories_edit.php",
             method:"POST",
             data:{category_id:category_id,category_name:category_name,action:action},
             dataType:"JSON",
@@ -224,7 +224,7 @@ $('.delete_service_bttn').click(function()
 
     $.ajax(
     {
-        url:"ajax_files/services_ajax.php",
+        url:"edit/services_delete.php",
         method:"POST",
         data:{service_id:service_id,do:do_},
         success: function (data) 
@@ -265,7 +265,7 @@ $(".sb-worktime-day-switch").click(function()
 
     $.ajax(
     {
-        url:"ajax_files/employees_ajax.php",
+        url:"edit/employees_delete.php",
         method:"POST",
         data:{employee_id:employee_id,do:do_},
         success: function (data) 

@@ -90,35 +90,21 @@
                     <img class="d-block w-100 slideimg1" src="Design/images/barbershop_image_1.jpg" alt="First slide">
                     <div class="carousel-caption d-md-block">
                         <h3>It's Not Just a Haircut, It's an Experience.</h3>
-                        <p>
-                            Our barbershop is the territory created purely for males who appreciate
-                            <br>
-                            premium quality, time and flawless look.
-                        </p>
+                        
                     </div>
                 </div>
                 <!-- SECOND SLIDE -->
                 <div class="carousel-item height90vh">
                     <img class="d-block w-100 slideimg1" src="Design/images/barbershop_image_2.jpg" alt="Second slide">
                     <div class="carousel-caption d-md-block">
-                        <h3>It's Not Just a Haircut, It's an Experience.</h3>
-                        <p>
-                            Our barbershop is the territory created purely for males who appreciate
-                            <br>
-                            premium quality, time and flawless look.
-                        </p>
+                        
                     </div>
                 </div>
                 <!-- THIRD SLIDE -->
                 <div class="carousel-item height90vh">
                     <img class="d-block w-100 slideimg1" src="Design/images/barbershop_image_3.jpg" alt="Third slide">
                     <div class="carousel-caption d-md-block">
-                        <h3>It's Not Just a Haircut, It's an Experience.</h3>
-                        <p>
-                            Our barbershop is the territory created purely for males who appreciate
-                            <br>
-                            premium quality, time and flawless look.
-                        </p>
+                        
                     </div>
                 </div>
             </div>
@@ -408,7 +394,7 @@
                         أرسل لنا رسالة اليوم!
                     </h2>
 
-                    <h4>
+                    <h4 style="text-align:left;">
                         <span style="font-weight: bold">Email:</span>
                         barbertop@barbertop.com
                         <br>

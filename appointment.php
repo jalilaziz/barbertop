@@ -87,8 +87,8 @@
                         $stmt->execute(array($appointment_id[0],$service));
                     }
                     
-                    echo "<div class = 'alert alert-success'>";
-                        echo "Great! Your appointment has been created successfully.";
+                    echo "<div class = 'alert alert-success' style='text-align:right;font-size:30px;'>";
+                        echo "شكرا لك لقد تم حجز موعدك بنجاح. سيتم الاتصال بك للتأكيد.";
                     echo "</div>";
 
                     $con->commit();
@@ -145,7 +145,7 @@
                                     	echo "</span>";
                                     	echo "<div class = 'service_price_field'>";
     										echo "<span style = 'font-weight: bold;'>";
-                                    			echo $row['service_price']."$";
+                                    			echo $row['service_price']."DH";
                                     		echo "</span>";
                                     	echo "</div>";
                                     ?>
@@ -253,19 +253,19 @@
                 <div>
                     <div class="form-group colum-row row">
                         <div class="col-sm-6">
-                            <input type="text" name="client_first_name" id="client_first_name" class="form-control" placeholder="First Name">
+                            <input type="text" name="client_first_name" id="client_first_name" class="form-control" placeholder="الاسم">
 							<span class = "invalid-feedback">المرجو ادخال الاسم</span>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" name="client_last_name" id="client_last_name" class="form-control" placeholder="Last Name">
+                            <input type="text" name="client_last_name" id="client_last_name" class="form-control" placeholder="اللقب">
 							<span class = "invalid-feedback">المرجو ادخال اللقب</span>
                         </div>
                         <div class="col-sm-6">
-                            <input type="email" name="client_email" id="client_email" class="form-control" placeholder="E-mail">
+                            <input type="email" name="client_email" id="client_email" class="form-control" placeholder="البريد الالكتروني">
 							<span class = "invalid-feedback">بريد إلكتروني غير صالح</span>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text"  name="client_phone_number" id="client_phone_number" class="form-control" placeholder="Phone number">
+                            <input type="text"  name="client_phone_number" id="client_phone_number" class="form-control" placeholder="رقم الهاتف">
 							<span class = "invalid-feedback">رقم هاتف غير صالح</span>
 						</div>
                     </div>

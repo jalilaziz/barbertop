@@ -1,11 +1,5 @@
 
-/*
-    ======================================
-    
-    DASHBOARD PAGE STYLE
-
-    ========================================
-*/
+/*  DASHBOARD PAGE STYLE  */
 
 .tab button.active 
 {
@@ -32,13 +26,7 @@
     display: none;
 }
 
-/*
-    ======================================
-    
-    EMPLOYEES SCHEDULE PAGE STYLE
-
-    ========================================
-*/
+/* EMPLOYEES SCHEDULE PAGE STYLE */
 
 input[type=checkbox] 
 {
@@ -67,13 +55,7 @@ input[type=checkbox]
 }
 
 
-/*
-    ======================================
-    
-    BARBERSHOP LOGIN PAGE STYLE
-
-    ======================================
-*/
+/*  BARBERTOP LOGIN PAGE STYLE  */
 
 
 .login 

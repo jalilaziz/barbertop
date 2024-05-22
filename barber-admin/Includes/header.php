@@ -2,7 +2,6 @@
 <html lang="en">
 
 	<head>
-		
 		<meta charset="utf-8">
 	  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,13 +10,13 @@
   		<title><?php echo $pageTitle ?></title>
 
   		<!-- FONTS FILE -->
-  		<link href="Design/fonts/css/all.min.css" rel="stylesheet" type="text/css">
+  		<link rel="stylesheet" href="Design/fonts/css/all.min.css" type="text/css">
 
   		<!-- Nunito FONT FAMILY FILE -->
   		<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   		<!-- CSS FILES -->
-  		<link href="Design/css/sb-admin-2.min.css" rel="stylesheet">
+  		<link href="Design/css/admin.css" rel="stylesheet">
   		<link href="Design/css/main.css" rel="stylesheet">
 
   		<!-- Barber Icons -->
@@ -39,7 +38,7 @@
 					<div class="sidebar-brand-icon rotate-n-15">
 			  			<i class="bs bs-scissors-1"></i>
 					</div>
-					<div class="sidebar-brand-text mx-3">Barbershop</div>
+					<div class="sidebar-brand-text mx-3">BarberTop</div>
 		  		</a>
 
 		  		<!-- Divider -->
@@ -58,7 +57,7 @@
 
 	  			<!-- Heading -->
 	  			<div class="sidebar-heading">
-					SERVICES & SAMPLES
+					SERVICES & CATEGORIES
 	  			</div>
 
 	  			<!-- Nav Item - Pages Collapse Menu -->
@@ -74,12 +73,12 @@
 		  				<span>Services</span>
 		  			</a>
 	  			</li>
-	  			<li class="nav-item">
+	  			<!-- <li class="nav-item">
 					<a class="nav-link" href="#">
 		  				<i class="far fa-image"></i>
 		  				<span>Samples</span>
 		  			</a>
-	  			</li>
+	  			</li> -->
 			  	
 
 	  			<!-- Divider -->
@@ -163,10 +162,6 @@
 									<a class="dropdown-item" href="#">
 								  		<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
 								  		Settings
-									</a>
-									<a class="dropdown-item" href="#">
-								  		<i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-								  		Activity Log
 									</a>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">

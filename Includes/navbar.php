@@ -30,7 +30,7 @@
         </div>
     </header>
 
-	<div class="header-height" style="height: 80px;"></div>
+	<!-- <div class="header-height" style="height: 60px;"></div> -->
 
     <!-- END NAVBAR SECTION -->
 

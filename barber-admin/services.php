@@ -236,7 +236,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="service_price">Service Price($)</label>
+                                            <label for="service_price">Service Price(DH)</label>
                                             <input type="text" class="form-control" value="<?php echo (isset($_POST['service_price']))?htmlspecialchars($_POST['service_price']):'' ?>" placeholder="Service Price" name="service_price">
                                             <?php
 
@@ -465,7 +465,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="service_price">Service Price($)</label>
+                                                    <label for="service_price">Service Price(DH)</label>
                                                     <input type="text" class="form-control" value="<?php echo $service['service_price'] ?>" placeholder="Service Price" name="service_price">
                                                     <?php
 

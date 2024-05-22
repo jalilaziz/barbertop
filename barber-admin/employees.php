@@ -11,7 +11,7 @@
     include 'Includes/header.php';
 
     //Extra JS FILES
-    echo "<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>";
+    //echo "<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>";
 
     //Check If user is already logged in
     if(isset($_SESSION['username_barbershop_Xw211qAAsq4']) && isset($_SESSION['password_barbershop_Xw211qAAsq4']))

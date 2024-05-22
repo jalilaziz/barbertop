@@ -6,9 +6,9 @@
 	{
 		global $pageTitle;
 		if(isset($pageTitle))
-			echo $pageTitle." | Barbershop Salon";
+			echo $pageTitle." BarberTop Salon";
 		else
-			echo " | Barbershop Salon";
+			echo " BarberTop Salon";
 	}
 
 	/*
@@ -44,10 +44,8 @@
 
 
   	/*
-    	==============================================
     	TEST INPUT FUNCTION, IS USED FOR SANITIZING USER INPUTS
     	AND REMOVE SUSPICIOUS CHARS and Remove Extra Spaces
-    	==============================================
 	
 	*/
 

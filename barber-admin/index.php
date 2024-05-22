@@ -196,7 +196,18 @@
                                                 echo "</td>";
                                                 echo "<td>";
                                                     echo "<a href = clients.php>";
-                                                        echo $row['client_id'];
+                                                        // echo $row['client_id']; hna
+                                                    $stmtClients = $con->prepare("SELECT first_name,last_name
+                                                            from clients e, appointments a
+                                                            where e.client_id = a.client_id
+                                                            and a.appointment_id = ?");
+                                                    $stmtClients->execute(array($row['appointment_id']));
+                                                    $rowsClients = $stmtClients->fetchAll();
+                                                    foreach($rowsClients as $rowsclient)
+                                                    {
+                                                        echo $rowsclient['first_name']." ".$rowsclient['last_name'];
+                                                        
+                                                    }
                                                     echo "</a>";
                                                 echo "</td>";
                                                 echo "<td>";

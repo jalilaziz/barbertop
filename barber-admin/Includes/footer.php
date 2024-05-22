@@ -6,7 +6,7 @@
 	  	<footer class="sticky-footer bg-white">
 			<div class="container my-auto">
 		  		<div class="copyright text-center my-auto">
-					<span>Copyright &copy; Barbershop</span>
+					<span>Copyright &copy; BarberTop</span>
 		  		</div>
 			</div>
 	  	</footer>
@@ -43,7 +43,7 @@
 	<script src="Design/js/jquery.min.js"></script>
 	<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
 	<script src="Design/js/bootstrap.bundle.min.js"></script>
-	<script src="Design/js/sb-admin-2.min.js"></script>
+	<script src="Design/js/admin.js"></script>
 	<script src="Design/js/main.js"></script>
 
 </body>

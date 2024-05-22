@@ -230,7 +230,7 @@
                                 }
                                 
 
-                                $start = strtotime("+15 minutes", strtotime($start));
+                                $start = strtotime("+30 minutes", strtotime($start));
                                 $start =  date('H:i', $start);
 
                                 $secs = strtotime($sum_duration)-strtotime("00:00:00");
