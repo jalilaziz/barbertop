@@ -139,6 +139,11 @@ ul.nav>li>a {
 
 /*** START ABOUT SECTION  ***/
 
+.about-logo{
+    width: 80%;
+    display: inline-block;
+}
+
 .about_content h2 {
     font-size: 36px;
     line-height: 46px;
@@ -162,11 +167,11 @@ ul.nav>li>a {
 }
 
 .about_section .about_img_3 {
-    margin: -60px 0 0 40px;
+    margin: -8px 0 0 40px;
 }
 
 .about_section .about_img_2 {
-    margin: -80px 0 0 270px;
+    margin: -16px 0 0 270px;
 }
 
 /*** END ABOUT SECTION  ***/
@@ -241,6 +246,9 @@ ul.nav>li>a {
 
 .appointment_form {
     padding: 40px;
+    background: rgba(78, 69, 62, 0.7);
+    backdrop-filter: blur(8.9px);
+    border-radius: 15px;
 }
 
 .appointment_form .book_content {
@@ -419,6 +427,12 @@ ul.nav>li>a {
     width: 100%;
 }
 
+.team_members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 /*** END TEAM SECTION  ***/
 
 /*** START REVIEWS SECTION  ***/
@@ -510,7 +524,8 @@ ul.nav>li>a {
 
 .widget_social {
     display: block;
-    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .widget_social li {
@@ -521,6 +536,12 @@ ul.nav>li>a {
     color: #777;
     font-size: 12px;
     margin-right: 20px;
+}
+
+.footer_logo {
+    display: flex;
+    
+    align-items: center;
 }
 
 .footer_widget p {

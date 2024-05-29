@@ -53,7 +53,9 @@
                 <div class="about_content" style="text-align: center;">
 
                     <h2>Barber Top</h2>
-                    <img src="Design/images/about-logo.png" alt="logo">
+                    <div class="about-logo" style="">
+                        <img src="Design/images/about-logo.png" width=100% alt="logo">
+                    </div>
                     <p style="color: #777">
                         Barber is a person whose occupation is mainly to cut dress groom style and shave men's and boys'
                         hair. A barber's place of work is known as a "barbershop" or a "barber's". Barbershops are also
@@ -301,11 +303,11 @@
                     <img src="Design/images/team-1.jpg" alt="Team Member">
                 </div>
             </li>
-            <li class="col-lg-3 col-md-6 padd_col_res">
+            <!-- <li class="col-lg-3 col-md-6 padd_col_res">
                 <div class="team_member">
                     <img src="Design/images/team-2.jpg" alt="Team Member">
                 </div>
-            </li>
+            </li> -->
             <li class="col-lg-3 col-md-6 padd_col_res">
                 <div class="team_member">
                     <img src="Design/images/team-3.jpg" alt="Team Member">
@@ -449,16 +451,17 @@
         <div class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="footer_widget">
-                    <img src="Design/images/barbershop_logo.png" alt="Brand">
-                    <p>
-
-                    </p>
+                    <div class="footer_logo">
+                        <img src="Design/images/barbershop_logo.png" alt="Brand" >
+                        <p>
+                        </p>
+                    </div>
                     <ul class="widget_social">
-                        <li><a href="#" data-toggle="tooltip" title="Facebook"><i
+                        <li><a href="https://facebook.com" data-toggle="tooltip" title="Facebook"><i
                                     class="fab fa-facebook-f fa-2x"></i></a></li>
-                        <li><a href="#" data-toggle="tooltip" title="Twitter"><i class="fab fa-twitter fa-2x"></i></a>
-                        </li>
-                        <li><a href="#" data-toggle="tooltip" title="Instagram"><i
+                        <!-- <li><a href="https://x.com" data-toggle="tooltip" title="Twitter"><i class="fab fa-twitter fa-2x"></i></a>
+                        </li> -->
+                        <li><a href="https://instagram.com" data-toggle="tooltip" title="Instagram"><i
                                     class="fab fa-instagram fa-2x"></i></a></li>
                     </ul>
                 </div>
