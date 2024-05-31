@@ -6,7 +6,7 @@
 	  	<footer class="sticky-footer bg-white">
 			<div class="container my-auto">
 		  		<div class="copyright text-center my-auto">
-					<span>Copyright &copy; BarberTop</span>
+					<span>Copyright &copy; BarberTop 2024</span>
 		  		</div>
 			</div>
 	  	</footer>
@@ -41,7 +41,7 @@
 
 	<!-- INCLUDE JS SCRIPTS -->
 	<script src="Design/js/jquery.min.js"></script>
-	<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="Design/js/bootstrap.bundle.min.js"></script>
 	<script src="Design/js/admin.js"></script>
 	<script src="Design/js/main.js"></script>

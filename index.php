@@ -296,22 +296,22 @@
             <div class="heading-line"></div>
         </div>
         <ul class="team_members row">
-            <li class="col-lg-3 col-md-6 padd_col_res">
+            <li class="col-lg-3 padd_col_res">
                 <div class="team_member">
                     <img src="Design/images/team-1.jpg" alt="Team Member">
                 </div>
             </li>
-            <li class="col-lg-3 col-md-6 padd_col_res">
+            <!-- <li class="col-lg-3 col-md-6 padd_col_res">
                 <div class="team_member">
                     <img src="Design/images/team-2.jpg" alt="Team Member">
                 </div>
-            </li>
-            <li class="col-lg-3 col-md-6 padd_col_res">
+            </li> -->
+            <li class="col-lg-3 padd_col_res">
                 <div class="team_member">
                     <img src="Design/images/team-3.jpg" alt="Team Member">
                 </div>
             </li>
-            <li class="col-lg-3 col-md-6 padd_col_res">
+            <li class="col-lg-3 padd_col_res">
                 <div class="team_member">
                     <img src="Design/images/team-4.jpg" alt="Team Member">
                 </div>

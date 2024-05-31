@@ -22,7 +22,11 @@
 {
 	.book_bg, .about_img
 	{
-    	display: none;
+    	/* display: none; */
+		width: 100%;
+	}
+	.book_section {
+		background: none;
 	}
 
 	#home-section-carousel .carousel-caption
@@ -44,6 +48,7 @@
 	{
 		font-size: 10px;
 	}
+
 }
 
 @media (max-width: 992px)
