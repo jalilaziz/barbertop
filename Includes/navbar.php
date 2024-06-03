@@ -14,8 +14,8 @@
                             <li><a href="./#">الصفحة الرئيسية</a></li>
                             <li><a href="./#about">من نحن</a></li>
                             <li><a href="./#services">خدماتنا</a></li>
-                            <li><a href="./#gallery">الصور</a></li>
-                            <li><a href="./#pricing">الأثمنة</a></li>
+                            <li><a href="./#team">فريقنا</a></li>
+                            <li><a href="./#gallery">صور</a></li>
                             <li><a href="./#contact-us">اتصل بنا</a></li>
                         </ul>
                     </div>
@@ -39,7 +39,7 @@
     <div id="menu_mobile" class="menu-mobile-menu-container">
         <ul class="mob-menu-top">
             <li class="menu-header">
-                <a href="#">القائمة</a>
+                <a href="">القائمة</a>
             </li>
             <li style="display: inline-block;">
                 <a class="mob-close-toggle" style="cursor: pointer;width: 75px;">
@@ -65,8 +65,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="appointment.php" class="a-mob-menu">
-                    احجز موعدًا
+                    <a href="index.php#team" class="a-mob-menu">
+                    فريقنا
                     </a>
                 </li>
                 <li>
@@ -75,8 +75,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="index.php#pricing" class="a-mob-menu">
-                    الأثمنة
+                    <a href="appointment.php" class="a-mob-menu">
+                    احجز موعدًا
                     </a>
                 </li>
                 <li>

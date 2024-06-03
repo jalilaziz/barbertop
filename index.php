@@ -81,6 +81,9 @@
 <section class="home-section height90vh" id="home-section">
     <div class="home-section-content height90vh">
         <div id="home-section-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-caption d-md-block">
+                <h3>ليست مجرد قصة شعر، إنها تجربة.</h3>
+            </div>
             <ol class="carousel-indicators">
                 <li data-target="#home-section-carousel" data-slide-to="0" class="active"></li>
                 <li data-target="#home-section-carousel" data-slide-to="1"></li>
@@ -90,10 +93,7 @@
                 <!-- FIRST SLIDE -->
                 <div class="carousel-item height90vh active">
                     <img class="d-block w-100 slideimg1" src="Design/images/barbershop_image_1.jpg" alt="First slide">
-                    <div class="carousel-caption d-md-block">
-                        <h3>It's Not Just a Haircut, It's an Experience.</h3>
-                        
-                    </div>
+                    
                 </div>
                 <!-- SECOND SLIDE -->
                 <div class="carousel-item height90vh">
@@ -130,6 +130,7 @@
         <div class="section_heading">
 
             <!-- <h2>Our Services</h2> -->
+            <h2>خدماتنا</h2>
             <div class="heading-line"></div>
         </div>
         <div class="row">
@@ -183,12 +184,11 @@
 
     <div class="container">
         <div class="section_heading">
-            <h2>خدماتنا</h2>
+            
             <div class="heading-line"></div>
         </div>
         <div class="row">
             <?php
-
                 foreach($categories as $category)
                 {
                     $stmt = $con->prepare("Select * from services where category_id = ?");
@@ -205,22 +205,17 @@
                     <h3><?php echo $category['category_name'] ?></h3>
                     <ul class="price_list">
                         <?php
-
                             foreach($services as $service)
                             {
                         ?>
-
                         <li>
                             <h4><?php echo $service['service_name'] ?></h4>
                             <p><?php echo $service['service_description'] ?></p>
                             <span class="price"><?php echo $service['service_price'] ?>DH</span>
                         </li>
-
                         <?php
                             }
-
                         ?>
-
                     </ul>
                 </div>
             </div>
@@ -228,10 +223,41 @@
             <?php
                     }
                 }
-
             ?>
-
         </div>
+    </div>
+</section>
+
+<!-- TEAM SECTION -->
+
+<section id="team" class="team_section">
+    <div class="container">
+        <div class="section_heading ">
+            <h2>فريقنا</h2>
+            <div class="heading-line"></div>
+        </div>
+        <ul class="team_members row">
+            <li class="col-lg-3 col-md-6 padd_col_res">
+                <div class="team_member">
+                    <img src="Design/images/team-1.jpg" alt="Team Member">
+                </div>
+            </li>
+            <!-- <li class="col-lg-3 col-md-6 padd_col_res">
+                <div class="team_member">
+                    <img src="Design/images/team-2.jpg" alt="Team Member">
+                </div>
+            </li> -->
+            <li class="col-lg-3 col-md-6 padd_col_res">
+                <div class="team_member">
+                    <img src="Design/images/team-3.jpg" alt="Team Member">
+                </div>
+            </li>
+            <li class="col-lg-3 col-md-6 padd_col_res">
+                <div class="team_member">
+                    <img src="Design/images/team-4.jpg" alt="Team Member">
+                </div>
+            </li>
+        </ul>
     </div>
 </section>
 
@@ -286,39 +312,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- TEAM SECTION -->
-
-<section id="team" class="team_section">
-    <div class="container">
-        <div class="section_heading ">
-            <h2>فريقنا</h2>
-            <div class="heading-line"></div>
-        </div>
-        <ul class="team_members row">
-            <li class="col-lg-3 padd_col_res">
-                <div class="team_member">
-                    <img src="Design/images/team-1.jpg" alt="Team Member">
-                </div>
-            </li>
-            <!-- <li class="col-lg-3 col-md-6 padd_col_res">
-                <div class="team_member">
-                    <img src="Design/images/team-2.jpg" alt="Team Member">
-                </div>
-            </li> -->
-            <li class="col-lg-3 col-md-6 padd_col_res">
-                <div class="team_member">
-                    <img src="Design/images/team-3.jpg" alt="Team Member">
-                </div>
-            </li>
-            <li class="col-lg-3 padd_col_res">
-                <div class="team_member">
-                    <img src="Design/images/team-4.jpg" alt="Team Member">
-                </div>
-            </li>
-        </ul>
     </div>
 </section>
 
@@ -451,7 +444,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="footer_widget">
-                    <div class="footer_logo">
+                    <div class="footer_logo" >
                         <img src="Design/images/barbershop_logo.png" alt="Brand" >
                         <p>
                         </p>
@@ -472,11 +465,7 @@
                     <p>
                         شارع محمد الخامس رقم 425 - طنجة
                     </p>
-                    <p style="text-align:left;direction:left">
-                        barbertop@barbertop.com
-                        <br>
-                        Phone: +212 522525252
-                    </p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d202.31067649322193!2d-5.801782904982422!3d35.77609303244108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sma!4v1717418743214!5m2!1sen!2sma" width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
             <!-- <div class="col-lg-4 col-md-6">
@@ -494,7 +483,7 @@
                 </div> -->
             <div class="col-lg-4 col-md-6">
                 <div class="footer_widget">
-                    <h3>اشترك معنا</h3>
+                    <h3 style="margin:0 0 20px">اشترك معنا</h3>
                     <div class="subscribe_form">
                         <form action="#" class="subscribe_form" novalidate="true">
                             <input type="email" name="EMAIL" id="subs-email" class="form_input"
