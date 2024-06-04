@@ -299,9 +299,9 @@
                             <?php
                                 $stmt = $con->prepare("SELECT * 
                                                 FROM appointments a , clients c
-                                                where a.client_id = c.client_id
-                                                order by start_time;
-                                                ");
+                                                where a.client_id = c.client_id; 
+                                                ORDER BY `start_time` DESC
+                                                "); //order by start_time
                                 $stmt->execute(array());
                                 $rows = $stmt->fetchAll();
                                 $count = $stmt->rowCount();

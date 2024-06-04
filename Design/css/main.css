@@ -545,11 +545,11 @@ ul.nav>li>a {
     margin-right: 20px;
 }
 
-.footer_logo {
+/* .footer_logo {
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     justify-content: center;
-}
+} */
 
 .footer_widget p {
     color: #999;

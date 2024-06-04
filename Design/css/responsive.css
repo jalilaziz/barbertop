@@ -53,10 +53,9 @@
 	{
 		font-size: 10px;
 	}
+	.maps, .footer_widget, .col-lg-4 {
+		width:100%;
+	}
 
 }
 
-@media (max-width: 992px)
-{
-	
-}

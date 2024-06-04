@@ -9,7 +9,7 @@
 
 ?>
 <!-- Appointment Page Stylesheet -->
-<link rel="stylesheet" href="Design/css/appointment-page-style.css">
+<link rel="stylesheet" href="Design/css/appointment.css">
 
 <!-- BOOKING APPOINTMENT SECTION -->
 
@@ -87,8 +87,8 @@
                         $stmt->execute(array($appointment_id[0],$service));
                     }
                     
-                    echo "<div class = 'alert alert-success' style='text-align:right;font-size:30px;'>";
-                        echo "شكرا لك لقد تم حجز موعدك بنجاح. سيتم الاتصال بك للتأكيد.";
+                    echo "<div class = 'alert alert-success' style='text-align:right;font-size:18px;'>";
+                        echo "شكرا لك لقد تم حجز موعدك بنجاح.<br> سيتم الاتصال بك للتأكيد.";
                     echo "</div>";
 
                     $con->commit();
@@ -288,7 +288,7 @@
 
   			<!-- Circles which indicates the steps of the form: -->
 
-  			<div style="text-align:center;margin-top:40px;">
+  			<div style="text-align:center;">
     			<span class="step"></span>
     			<span class="step"></span>
     			<span class="step"></span>
