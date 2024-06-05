@@ -14,7 +14,7 @@
     echo "<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>";
 
     //Check If user is already logged in
-    if(isset($_SESSION['username_barbershop_Xw211qAAsq4']) && isset($_SESSION['password_barbershop_Xw211qAAsq4']))
+    if(isset($_SESSION['email_barbershop_Xw211qAAsq4']) && isset($_SESSION['password_barbershop_Xw211qAAsq4']))
     {
 ?>
         <!-- Begin Page Content -->
@@ -243,27 +243,6 @@
                                             ?>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group"> 
-                                            <label for="password">Password</label>
-                                            <input type="text" class="form-control" value="<?php echo (isset($_POST['password']))?htmlspecialchars($_POST['password']):'' ?>" placeholder="Password" name="password">
-                                            <?php
-                                                if(isset($_POST['add_new_employee']))
-                                                {
-                                                    if(empty(test_input($_POST['password'])))
-                                                    {
-                                                        ?>
-                                                            <div class="invalid-feedback" style="display: block;">
-                                                                Email is required.
-                                                            </div>
-                                                        <?php
-
-                                                        $flag_add_employee_form = 1;
-                                                    }
-                                                }
-                                            ?>
-                                        </div>
-                                    </div>
                                 </div>
 
                                 <!-- SUBMIT BUTTON -->
@@ -282,13 +261,11 @@
                                     $employee_lname = $_POST['employee_lname'];
                                     $employee_phone = test_input($_POST['employee_phone']);
                                     $employee_email = test_input($_POST['employee_email']);
-                                    $employee_password = test_input($_POST['password']);
-                                    $passwordHash = sha1($employee_password);
 
                                     try
                                     {
-                                        $stmt = $con->prepare("insert into employees(first_name,last_name,phone_number,email,password) values(?,?,?,?,?) ");
-                                        $stmt->execute(array($employee_fname,$employee_lname,$employee_phone,$employee_email,$passwordHash));
+                                        $stmt = $con->prepare("insert into employees(first_name,last_name,phone_number,email) values(?,?,?,?) ");
+                                        $stmt->execute(array($employee_fname,$employee_lname,$employee_phone,$employee_email));
                                         
                                         ?> 
                                             <!-- SUCCESS MESSAGE -->
@@ -428,29 +405,6 @@
                                                     ?>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group"> 
-                                                    <label for="password">Password</label>
-                                                    <input type="text" class="form-control" value="<?php 
-                                                    echo $employee['password'] 
-                                                    ?>" placeholder="Password" name="password">
-                                                    <?php
-                                                        if(isset($_POST['edit_employee_sbmt']))
-                                                        {
-                                                            if(empty(test_input($_POST['password'])))
-                                                            {
-                                                                ?>
-                                                                    <div class="invalid-feedback" style="display: block;">
-                                                                        Password is required.
-                                                                    </div>
-                                                                <?php
-
-                                                                $flag_edit_employee_form = 1;
-                                                            }
-                                                        }
-                                                    ?>
-                                                </div>
-                                            </div>
                                         </div>
 
                                         <!-- SUBMIT BUTTON -->
@@ -467,13 +421,11 @@
                                             $employee_phone = test_input($_POST['employee_phone']);
                                             $employee_email = test_input($_POST['employee_email']);
                                             $employee_id = $_POST['employee_id'];
-                                            $employee_password = $_POST['password'];
-                                            $passwordHash = sha1($employee_password);
 
                                             try
                                             {
-                                                $stmt = $con->prepare("update employees set first_name = ?, last_name = ?, phone_number = ?, email = ?,password=? where employee_id = ? ");
-                                                $stmt->execute(array($employee_fname,$employee_lname,$employee_phone,$employee_email,$employee_id,$passwordHash));
+                                                $stmt = $con->prepare("update employees set first_name = ?, last_name = ?, phone_number = ?, email = ? where employee_id = ? ");
+                                                $stmt->execute(array($employee_fname,$employee_lname,$employee_phone,$employee_email,$employee_id));
                                                 
                                                 ?> 
                                                     <!-- SUCCESS MESSAGE -->
