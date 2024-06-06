@@ -541,8 +541,8 @@ ul.nav>li>a {
 
 .widget_social li a {
     color: #777;
-    font-size: 12px;
-    margin-right: 20px;
+    /* font-size: 12px;
+    margin-right: 20px; */
 }
 
 /* .footer_logo {

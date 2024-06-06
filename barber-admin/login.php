@@ -2,13 +2,13 @@
 	session_start();
 
 	// IF THE USER HAS ALREADY LOGGED IN
-	if(isset($_SESSION['username_barbershop_Xw211qAAsq4']) && isset($_SESSION['password_barbershop_Xw211qAAsq4']))
+	if(isset($_SESSION['email_barbershop_Xw211qAAsq4']) && isset($_SESSION['password_barbershop_Xw211qAAsq4']))
 	{
 		header('Location: index.php');
 		exit();
 	}
 	// ELSE
-	$pageTitle = 'Barber Admin Login';
+	$pageTitle = 'Admin Login';
 	include 'connect.php';
 	include 'Includes/functions.php';
 
@@ -21,7 +21,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Barber Admin Login</title>
+		<title>Admin Login</title>
 		<!-- FONTS FILE -->
 		<link href="Design/fonts/css/all.min.css" rel="stylesheet" type="text/css">
 
@@ -36,7 +36,7 @@
 		<div class="login">
 			<form class="login-container validate-form" name="login-form" method="POST" action="login.php" onsubmit="return validateLogInForm()">
 				<span class="login100-form-title p-b-32">
-					Barber Admin Login
+					Admin Login
 				</span>
 
 				<!-- PHP SCRIPT WHEN SUBMIT -->
@@ -45,23 +45,23 @@
 
 					if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signin-button']))
 					{
-						$username = test_input($_POST['username']);
+						$email = test_input($_POST['email']);
 						$password = test_input($_POST['password']);
 						$hashedPass = sha1($password);
 
 						//Check if User Exist In database
 
-						$stmt = $con->prepare("Select admin_id, username,password from barber_admin where username = ? and password = ?");
-						$stmt->execute(array($username,$hashedPass));
+						$stmt = $con->prepare("Select admin_id, email,password from barber_admin where email = ? and password = ?");
+						$stmt->execute(array($email,$hashedPass));
 						$row = $stmt->fetch();
 						$count = $stmt->rowCount();
 
-						// Check if count > 0 which mean that the database contain a record about this username
+						// Check if count > 0 which mean that the database contain a record about this email
 
 						if($count > 0)
 						{
 
-							$_SESSION['username_barbershop_Xw211qAAsq4'] = $username;
+							$_SESSION['email_barbershop_Xw211qAAsq4'] = $email;
 							$_SESSION['password_barbershop_Xw211qAAsq4'] = $password;
 							$_SESSION['admin_id_barbershop_Xw211qAAsq4'] = $row['admin_id'];
 							header('Location: index.php');
@@ -76,7 +76,7 @@
 									<span aria-hidden="true">×</span>
 								</button>
 								<div class="messages">
-									<div>Username and/or password are incorrect!</div>
+									<div>Email and/or password are incorrect!</div>
 								</div>
 							</div>
 
@@ -86,12 +86,12 @@
 
 				?>
 
-				<!-- USERNAME INPUT -->
+				<!-- email INPUT -->
 
 				<div class="form-input">
-					<span class="txt1">Username</span>
-					<input type="text" name="username" class = "form-control" oninput = "getElementById('required_username').style.display = 'none'" autocomplete="off">
-					<span class="invalid-feedback" id="required_username">Username is required!</span>
+					<span class="txt1">Email</span>
+					<input type="text" name="email" class = "form-control" oninput = "getElementById('required_email').style.display = 'none'" autocomplete="off">
+					<span class="invalid-feedback" id="required_email">email is required!</span>
 				</div>
 				
 				<!-- PASSWORD INPUT -->
@@ -115,10 +115,10 @@
 		</div>
 		
 		<!-- Footer -->
-		<footer class="sticky-footer bg-white">
+		<footer class="sticky-footer bg-white" style="text-align:center;">
 			<div class="container my-auto">
 		  		<div class="copyright text-center my-auto">
-					<span>Copyright &copy; BarberTop</span>
+					<span>Copyright &copy; BarberTop 2024</span>
 		  		</div>
 			</div>
 	  	</footer>

@@ -14,7 +14,7 @@
     echo "<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>";
 
     //Check If user is already logged in
-    if(isset($_SESSION['username_barbershop_Xw211qAAsq4']) && isset($_SESSION['password_barbershop_Xw211qAAsq4']))
+    if(isset($_SESSION['email_barbershop_Xw211qAAsq4']) && isset($_SESSION['password_barbershop_Xw211qAAsq4']))
     {
 ?>
         <!-- Begin Page Content -->

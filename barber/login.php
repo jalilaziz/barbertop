@@ -115,10 +115,10 @@
 		</div>
 		
 		<!-- Footer -->
-		<footer class="sticky-footer bg-white">
+		<footer class="sticky-footer bg-white" style="text-align:center;">
 			<div class="container my-auto">
 		  		<div class="copyright text-center my-auto">
-					<span>Copyright &copy; BarberTop</span>
+					<span>Copyright &copy; BarberTop 2024</span>
 		  		</div>
 			</div>
 	  	</footer>
