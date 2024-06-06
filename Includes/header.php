@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
-		<meta name="description" content="Barbershop Booking Space">
+		<meta name="description" content="BarberTop Booking Space">
 		<title>BarberTop </title>
 
 		<!--  CSS LINKS -->

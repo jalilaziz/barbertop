@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 	  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	  	<meta name="description" content="Barbershop Booking Website">
+	  	<meta name="description" content="BarberTop Booking Space">
 
   		<title><?php echo $pageTitle ?></title>
 
@@ -148,7 +148,7 @@
 							<li class="nav-item dropdown no-arrow">
 					  			<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<span class="mr-2 d-none d-lg-inline text-gray-600 small">
-										<?php echo $_SESSION['email_barbershop_Xw211qAAsq4']; ?>
+										<?php echo $_SESSION['email_barbertop']; ?>
 									</span>
 									<i class="fas fa-caret-down"></i>
 								</a>
