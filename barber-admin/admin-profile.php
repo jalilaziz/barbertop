@@ -173,7 +173,27 @@
                                             ?>
                                         </div>
                                     </div>
-                                    
+                                    <div class="col-md-6">
+                                        <div class="form-group"> 
+                                            <label for="admin_email">E-mail</label>
+                                            <input type="text" class="form-control" value="<?php echo (isset($_POST['admin_email']))?htmlspecialchars($_POST['admin_email']):'' ?>" placeholder="E-mail" name="admin_email">
+                                            <?php
+                                                if(isset($_POST['add_new_admin']))
+                                                {
+                                                    if(empty(test_input($_POST['admin_email'])))
+                                                    {
+                                                        ?>
+                                                            <div class="invalid-feedback" style="display: block;">
+                                                                Email is required.
+                                                            </div>
+                                                        <?php
+
+                                                        $flag_add_admin_form = 1;
+                                                    }
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="row">
@@ -198,27 +218,7 @@
                                             ?>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group"> 
-                                            <label for="admin_email">E-mail</label>
-                                            <input type="text" class="form-control" value="<?php echo (isset($_POST['admin_email']))?htmlspecialchars($_POST['admin_email']):'' ?>" placeholder="E-mail" name="admin_email">
-                                            <?php
-                                                if(isset($_POST['add_new_admin']))
-                                                {
-                                                    if(empty(test_input($_POST['admin_email'])))
-                                                    {
-                                                        ?>
-                                                            <div class="invalid-feedback" style="display: block;">
-                                                                Email is required.
-                                                            </div>
-                                                        <?php
-
-                                                        $flag_add_admin_form = 1;
-                                                    }
-                                                }
-                                            ?>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="col-md-6">
                                         <div class="form-group"> 
                                             <label for="password">Password</label>
@@ -337,7 +337,27 @@
                                                     ?>
                                                 </div>
                                             </div>
-                                            
+                                            <div class="col-md-6">
+                                                <div class="form-group"> 
+                                                    <label for="admin_email">E-mail</label>
+                                                    <input type="text" class="form-control" value="<?php echo $admin['email'] ?>" placeholder="E-mail" name="admin_email">
+                                                    <?php
+                                                        if(isset($_POST['edit_admin_sbmt']))
+                                                        {
+                                                            if(empty(test_input($_POST['admin_email'])))
+                                                            {
+                                                                ?>
+                                                                    <div class="invalid-feedback" style="display: block;">
+                                                                        Email is required.
+                                                                    </div>
+                                                                <?php
+
+                                                                $flag_edit_admin_form = 1;
+                                                            }
+                                                        }
+                                                    ?>
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <div class="row">
@@ -362,27 +382,7 @@
                                                     ?>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group"> 
-                                                    <label for="admin_email">E-mail</label>
-                                                    <input type="text" class="form-control" value="<?php echo $admin['email'] ?>" placeholder="E-mail" name="admin_email">
-                                                    <?php
-                                                        if(isset($_POST['edit_admin_sbmt']))
-                                                        {
-                                                            if(empty(test_input($_POST['admin_email'])))
-                                                            {
-                                                                ?>
-                                                                    <div class="invalid-feedback" style="display: block;">
-                                                                        Email is required.
-                                                                    </div>
-                                                                <?php
-
-                                                                $flag_edit_admin_form = 1;
-                                                            }
-                                                        }
-                                                    ?>
-                                                </div>
-                                            </div>
+                                            
                                             <div class="col-md-6">
                                                 <div class="form-group"> 
                                                     <label for="password">Password</label>
