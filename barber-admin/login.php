@@ -2,7 +2,7 @@
 	session_start();
 
 	// IF THE USER HAS ALREADY LOGGED IN
-	if(isset($_SESSION['email_barbershop_Xw211qAAsq4']) && isset($_SESSION['password_barbershop_Xw211qAAsq4']))
+	if(isset($_SESSION['admin_email_barbertop']) && isset($_SESSION['password_barbertop']))
 	{
 		header('Location: index.php');
 		exit();
@@ -45,25 +45,25 @@
 
 					if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signin-button']))
 					{
-						$email = test_input($_POST['email']);
+						$admin_email = test_input($_POST['admin_email']);
 						$password = test_input($_POST['password']);
 						$hashedPass = sha1($password);
 
 						//Check if User Exist In database
 
-						$stmt = $con->prepare("Select admin_id, email,password from barber_admin where email = ? and password = ?");
-						$stmt->execute(array($email,$hashedPass));
+						$stmt = $con->prepare("Select admin_id, admin_email,password from barber_admin where admin_email = ? and password = ?");
+						$stmt->execute(array($admin_email,$hashedPass));
 						$row = $stmt->fetch();
 						$count = $stmt->rowCount();
 
-						// Check if count > 0 which mean that the database contain a record about this email
+						// Check if count > 0 which mean that the database contain a record about this admin_email
 
 						if($count > 0)
 						{
 
-							$_SESSION['email_barbershop_Xw211qAAsq4'] = $email;
-							$_SESSION['password_barbershop_Xw211qAAsq4'] = $password;
-							$_SESSION['admin_id_barbershop_Xw211qAAsq4'] = $row['admin_id'];
+							$_SESSION['admin_email_barbertop'] = $admin_email;
+							$_SESSION['password_barbertop'] = $password;
+							$_SESSION['admin_id_barbertop'] = $row['admin_id'];
 							header('Location: index.php');
 							die();
 						}
@@ -90,7 +90,7 @@
 
 				<div class="form-input">
 					<span class="txt1">Email</span>
-					<input type="text" name="email" class = "form-control" oninput = "getElementById('required_email').style.display = 'none'" autocomplete="off">
+					<input type="text" name="admin_email" class = "form-control" oninput = "getElementById('required_email').style.display = 'none'" autocomplete="off">
 					<span class="invalid-feedback" id="required_email">email is required!</span>
 				</div>
 				

@@ -14,7 +14,7 @@
     echo "<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>";
 
     //Check If user is already logged in
-    if(isset($_SESSION['email_barbershop_Xw211qAAsq4']) && isset($_SESSION['password_barbershop_Xw211qAAsq4']))
+    if(isset($_SESSION['admin_email_barbertop']) && isset($_SESSION['password_barbertop']))
     {
 ?>
         <!-- Begin Page Content -->
@@ -80,7 +80,7 @@
                                                             echo $admin['username'];
                                                         echo "</td>";
                                                         echo "<td>";
-                                                            echo $admin['email'];
+                                                            echo $admin['admin_email'];
                                                         echo "</td>";
                                                         echo "<td>";
                                                             echo $admin['full_name'];
@@ -262,7 +262,7 @@
 
                                     try
                                     {
-                                        $stmt = $con->prepare("insert into barber_admin (username,email,full_name,password) values(?,?,?,?) ");
+                                        $stmt = $con->prepare("insert into barber_admin (username,admin_email,full_name,password) values(?,?,?,?) ");
                                         $stmt->execute(array($username,$admin_email,$full_name,$passwordHash));
                                         
                                         ?> 
@@ -340,7 +340,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group"> 
                                                     <label for="admin_email">E-mail</label>
-                                                    <input type="text" class="form-control" value="<?php echo $admin['email'] ?>" placeholder="E-mail" name="admin_email">
+                                                    <input type="text" class="form-control" value="<?php echo $admin['admin_email'] ?>" placeholder="E-mail" name="admin_email">
                                                     <?php
                                                         if(isset($_POST['edit_admin_sbmt']))
                                                         {
@@ -386,7 +386,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group"> 
                                                     <label for="password">Password</label>
-                                                    <input type="text" class="form-control" value="<?php 
+                                                    <input type="password" class="form-control" value="<?php 
                                                     echo $admin['password'] 
                                                     ?>" placeholder="Password" name="password">
                                                     <?php
@@ -426,7 +426,7 @@
 
                                             try
                                             {
-                                                $stmt = $con->prepare("update barber_admin set username = ?, email = ?,full_name = ?, password=? where admin_id = ? ");
+                                                $stmt = $con->prepare("update barber_admin set username = ?, admin_email = ?,full_name = ?, password=? where admin_id = ? ");
                                                 $stmt->execute(array($username,$admin_email,$full_name,$admin_id,$passwordHash));
                                                 
                                                 ?> 
