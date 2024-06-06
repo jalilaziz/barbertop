@@ -12,7 +12,7 @@
 
 <section class="book_section" id="booking">
     <div class="book_bg"></div>
-    <div class="map_pattern"></div>
+    <!-- <div class="map_pattern"></div> -->
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-6">
@@ -62,7 +62,7 @@
                         places of social interaction and public discourse. In some instances, barbershops are also
                         public forums.
                     </p>
-                    <a href="#" class="default_btn" style="opacity: 1;">More about us</a>
+                    <!-- <a href="#" class="default_btn" style="opacity: 1;">More about us</a> -->
                 </div>
             </div>
             <div class="col-md-6  d-none d-md-block">

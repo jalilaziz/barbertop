@@ -20,13 +20,13 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Clients</h1>
-        <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+    <!--<div class="d-sm-flex align-items-center justify-content-between mb-4">
+         <h1 class="h3 mb-0 text-gray-800">Clients</h1>
+         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                     <i class="fas fa-download fa-sm text-white-50"></i>
                     Generate Report
-                </a> -->
-    </div>
+                </a> 
+    </div> -->
 
     <!-- Clients Table -->
 
@@ -51,7 +51,7 @@
                     ?>
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">clients</h6>
+                                <h5 class="m-0 font-weight-bold text-primary">Clients</h5>
                             </div>
                             <div class="card-body">
                                 
@@ -249,7 +249,8 @@
                                 <!-- SUBMIT BUTTON -->
 
                                 <button type="submit" name="add_new_client" class="btn btn-primary">Add client</button>
-
+                                <a type="button" class="btn btn-secondary" data-dismiss="modal" href="clients.php">Cancel</a>
+                                
                             </form>
 
                             <?php
@@ -412,6 +413,7 @@
                                         <button type="submit" name="edit_client_sbmt" class="btn btn-primary">
                                             Edit client
                                         </button>
+                                        <a type="button" class="btn btn-secondary" data-dismiss="modal" href="clients.php">Cancel</a>
                                     </form>
                                     <?php
                                         /*** EDIT client ***/

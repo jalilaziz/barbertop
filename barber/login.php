@@ -2,7 +2,7 @@
 	session_start();
 
 	// IF THE USER HAS ALREADY LOGGED IN
-	if(isset($_SESSION['email_barbershop_Xw211qAAsq4']) && isset($_SESSION['password_barbershop_Xw211qAAsq4']))
+	if(isset($_SESSION['email_barbertop']) && isset($_SESSION['password_barbertop']))
 	{
 		header('Location: index.php');
 		exit();
@@ -61,9 +61,9 @@
 						if($count > 0)
 						{
 
-							$_SESSION['email_barbershop_Xw211qAAsq4'] = $email;
-							$_SESSION['password_barbershop_Xw211qAAsq4'] = $password;
-							$_SESSION['employee_id_barbershop_Xw211qAAsq4'] = $row['employee_id'];
+							$_SESSION['email_barbertop'] = $email;
+							$_SESSION['password_barbertop'] = $password;
+							$_SESSION['employee_id_barbertop'] = $row['employee_id'];
 							header('Location: index.php');
 							die();
 						}
