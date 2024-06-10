@@ -25,11 +25,14 @@ body
 .swal-text {
     font-size:23px;
     text-align: center;
-    color: #155724;
+    color: #155724 !important;
 }
 
 .swal-button {
-    background-color: #4e453e;
+    background-color: #4e453e !important;
+}
+.swal-footer {
+    text-align: center !important;
 }
 
 .items_tab

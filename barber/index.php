@@ -138,6 +138,7 @@
                             <tbody>
 
                                 <?php
+                                
                                     $stmt = $con->prepare("SELECT * 
                                                     FROM appointments a , clients c
                                                     where start_time >= ?
