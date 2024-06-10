@@ -6,6 +6,8 @@
     include "Includes/header.php";
     include "Includes/navbar.php";
 
+    echo "<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>";
+
 ?>
 
 <!-- BOOKING SECTION -->
@@ -19,7 +21,9 @@
                 <form action="appointment.php" method="post" id="appointment_form"
                     class="form-horizontal appointment_form">
                     <div class="book_content" style="text-align:right;">
-                        <h2 style="color: white;">احجز موعدًا</h2>
+                    
+                        <h3 style="color: white;">ابدأ رحلة مليئة بالأناقة والثقة!</h3>
+                        <h4 style="color: white;">احجز موعدك معنا</h4>
                         <p style="color: #999;">
                         </p>
                     </div>
@@ -56,10 +60,11 @@
                         <img src="Design/images/about-logo.png" width=100% alt="logo">
                     </div>
                     <p style="color: #777" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
-                        Barber is a person whose occupation is mainly to cut dress groom style and shave men's and boys'
-                        hair. A barber's place of work is known as a "barbershop" or a "barber's". Barbershops are also
-                        places of social interaction and public discourse. In some instances, barbershops are also
-                        public forums.
+                    مرحبًا بكم في صالون BARBERTOP، وجهتك المثالية لتجربة حلاقة فريدة ومميزة! نسعى لتقديم أفضل الخدمات لعملائنا الكرام، حيث نجمع بين الخبرة والابتكار لضمان حصولك على إطلالة رائعة وأنيقة.
+                    <br>
+
+في صالون BARBERTOP، نؤمن بأن الحلاقة هي فن وعناية. فريقنا من الحلاقين المحترفين يتمتعون بمهارات عالية ويستخدمون أحدث الأدوات والتقنيات ليقدموا لك خدمات متنوعة. <br>
+نتطلع إلى استقبالك في صالون BARBERTOP، لنقدم لك أفضل تجربة حلاقة وعناية رجالية في المدينة. زيارتك ستكون بداية رحلة مليئة بالأناقة والثقة!
                     </p>
                     <!-- <a href="#" class="default_btn" style="opacity: 1;">More about us</a> -->
                 </div>
@@ -239,6 +244,7 @@
             <li class="col-lg-3 col-md-6 padd_col_res" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
                 <div class="team_member">
                     <img src="Design/images/team-1.jpg" alt="Team Member">
+                    <h5 class="price_list" style="font-family: 'Prata', sans-serif;text-align:center;padding:5px 0 5px">Karim</h5>
                 </div>
             </li>
             <!-- <li class="col-lg-3 col-md-6 padd_col_res" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
@@ -249,11 +255,13 @@
             <li class="col-lg-3 col-md-6 padd_col_res" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <div class="team_member">
                     <img src="Design/images/team-3.jpg" alt="Team Member">
+                    <h5 class="price_list" style="font-family: 'Prata', sans-serif;text-align:center;padding:5px 0 5px">Soufiane</h5>
                 </div>
             </li>
             <li class="col-lg-3 col-md-6 padd_col_res" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
                 <div class="team_member">
                     <img src="Design/images/team-4.jpg" alt="Team Member">
+                    <h5 class="price_list" style="font-family: 'Prata', sans-serif;text-align:center;padding:5px 0 5px">Adil</h5>
                 </div>
             </li>
         </ul>

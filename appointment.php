@@ -66,8 +66,14 @@ if(isset($_POST['submit_book_appointment_form']) && $_SERVER['REQUEST_METHOD'] =
             $stmt->execute([$appointment_id, $service]);
         }
 
-        echo "<div class='alert alert-success' style='text-align:right;font-size:18px;'>";
-        echo "شكرا لك لقد تم حجز موعدك بنجاح.<br> سيتم الاتصال بك للتأكيد.";
+        //echo "<div class='alert alert-success' style='text-align:right;font-size:18px;'>";
+        //echo "شكرا لك لقد تم حجز موعدك بنجاح.<br> سيتم الاتصال بك للتأكيد.";
+		echo "<script type='text/javascript'>
+                swal('شكرا لك لقد تم حجز موعدك بنجاح. سيتم الاتصال بك للتأكيد.').then((value) => 
+                {
+                    window.location.replace('appointment.php');
+                });
+                </script>";
         echo "</div>";
 
         $con->commit();

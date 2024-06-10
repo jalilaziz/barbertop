@@ -220,7 +220,7 @@ function validateForm()
                 },
                 error: function(xhr, status, error) 
                 {
-                    alert('AN ERROR HAS BEEN ENCOUNTERED WHILE TRYING TO EXECUTE YOUR REQUEST');
+                    alert('لقد وقع خطأ داخلي المرجو اعادة المحاولة!');
                 }
             });
 

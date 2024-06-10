@@ -22,6 +22,16 @@ body
     /* min-height: 500px; */
 }
 
+.swal-text {
+    font-size:23px;
+    text-align: center;
+    color: #155724;
+}
+
+.swal-button {
+    background-color: #4e453e;
+}
+
 .items_tab
 {
     border-radius: 4px;
