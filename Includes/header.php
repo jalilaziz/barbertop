@@ -7,6 +7,10 @@
 		<meta name="description" content="BarberTop Booking Space">
 		<title>BarberTop </title>
 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
 		<!--  CSS LINKS -->
 
 		<link rel="stylesheet" type="text/css" href="Design/css/bootstrap.min.css">

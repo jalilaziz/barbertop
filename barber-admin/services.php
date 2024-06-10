@@ -205,7 +205,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="service_duration">Service Duration(min)</label>
-                                            <input type="text" class="form-control" value="<?php echo (isset($_POST['service_duration']))?htmlspecialchars($_POST['service_duration']):'' ?>" placeholder="Service Duration" name="service_duration">
+                                            <input type="number" class="form-control" value="<?php echo (isset($_POST['service_duration']))?htmlspecialchars($_POST['service_duration']):'' ?>" placeholder="Service Duration" name="service_duration">
                                             <?php
 
                                                 if(isset($_POST['add_new_service']))
@@ -237,7 +237,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="service_price">Service Price(DH)</label>
-                                            <input type="text" class="form-control" value="<?php echo (isset($_POST['service_price']))?htmlspecialchars($_POST['service_price']):'' ?>" placeholder="Service Price" name="service_price">
+                                            <input type="number" class="form-control" value="<?php echo (isset($_POST['service_price']))?htmlspecialchars($_POST['service_price']):'' ?>" placeholder="Service Price" name="service_price">
                                             <?php
 
                                                 if(isset($_POST['add_new_service']))
@@ -272,32 +272,7 @@
                                         <div class="form-group">
                                             <label for="service_description">Service Description</label>
                                             <textarea class="form-control" name="service_description" style="resize: none;"><?php echo (isset($_POST['service_description']))?htmlspecialchars($_POST['service_description']):''; ?></textarea>
-                                            <?php
-
-                                                if(isset($_POST['add_new_service']))
-                                                {
-                                                    if(empty(test_input($_POST['service_description'])))
-                                                    {
-                                                        ?>
-                                                            <div class="invalid-feedback" style="display: block;">
-                                                                Service description is required.
-                                                            </div>
-                                                        <?php
-
-                                                        $flag_add_service_form = 1;
-                                                    }
-                                                    elseif(strlen(test_input($_POST['service_description'])) > 250)
-                                                    {
-                                                        ?>
-                                                            <div class="invalid-feedback" style="display: block;">
-                                                                The length of the description should be less than 250 letters.
-                                                            </div>
-                                                        <?php
-
-                                                        $flag_add_service_form = 1;
-                                                    }
-                                                }
-                                            ?>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -435,7 +410,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="service_duration">Service Duration(min)</label>
-                                                    <input type="text" class="form-control" value="<?php echo $service['service_duration'] ?>" placeholder="Service Duration" name="service_duration">
+                                                    <input type="number" class="form-control" value="<?php echo $service['service_duration'] ?>" placeholder="Service Duration" name="service_duration">
                                                     <?php
 
                                                         if(isset($_POST['edit_service_sbmt']))
@@ -467,7 +442,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="service_price">Service Price(DH)</label>
-                                                    <input type="text" class="form-control" value="<?php echo $service['service_price'] ?>" placeholder="Service Price" name="service_price">
+                                                    <input type="number" class="form-control" value="<?php echo $service['service_price'] ?>" placeholder="Service Price" name="service_price">
                                                     <?php
 
                                                         if(isset($_POST['edit_service_sbmt']))

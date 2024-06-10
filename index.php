@@ -15,13 +15,12 @@
     <!-- <div class="map_pattern"></div> -->
     <div class="container">
         <div class="row">
-            <div class="col-md-6 offset-md-6">
+            <div class="col-md-6 offset-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
                 <form action="appointment.php" method="post" id="appointment_form"
                     class="form-horizontal appointment_form">
                     <div class="book_content" style="text-align:right;">
                         <h2 style="color: white;">احجز موعدًا</h2>
                         <p style="color: #999;">
-
                         </p>
                     </div>
                     <div class="form-group row">
@@ -37,7 +36,7 @@
 
                     <!-- SUBMIT BUTTON -->
 
-                    <button id="app_submit" class="default_btn" type="submit">احجز موعدًا</button>
+                    <button id="app_submit" class="default_btn homebtn" type="submit">احجز موعدًا</button>
                 </form>
             </div>
         </div>
@@ -46,17 +45,17 @@
 
 <!-- ABOUT SECTION -->
 
-<section id="about" class="about_section">
+<section id="about" class="about_section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="about_content" style="text-align: center;">
 
-                    <h2>Barber Top</h2>
-                    <div class="about-logo" style="">
+                    <h2>Barber Top</h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+                    <div class="about-logo" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
                         <img src="Design/images/about-logo.png" width=100% alt="logo">
                     </div>
-                    <p style="color: #777">
+                    <p style="color: #777" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
                         Barber is a person whose occupation is mainly to cut dress groom style and shave men's and boys'
                         hair. A barber's place of work is known as a "barbershop" or a "barber's". Barbershops are also
                         places of social interaction and public discourse. In some instances, barbershops are also
@@ -67,9 +66,9 @@
             </div>
             <div class="col-md-6  d-none d-md-block">
                 <div class="about_img" style="overflow:hidden">
-                    <img class="about_img_1" src="Design/images/about-1.jpg" alt="about-1">
-                    <img class="about_img_2" src="Design/images/about-2.jpg" alt="about-2">
-                    <img class="about_img_3" src="Design/images/about-3.jpg" alt="about-3">
+                    <img class="about_img_1" src="Design/images/about-1.jpg" alt="about-1" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+                    <img class="about_img_2" src="Design/images/about-2.jpg" alt="about-2" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+                    <img class="about_img_3" src="Design/images/about-3.jpg" alt="about-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
                 </div>
             </div>
         </div>
@@ -78,7 +77,7 @@
 
 <!-- HOME SECTION -->
 
-<section class="home-section height90vh" id="home-section">
+<section class="home-section height90vh" id="home-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
     <div class="home-section-content height90vh">
         <div id="home-section-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-caption d-md-block">
@@ -125,37 +124,37 @@
 
 <!-- SERVICES SECTION -->
 
-<section class="services_section" id="services">
+<section class="services_section" id="services" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
     <div class="container">
-        <div class="section_heading">
+        <div class="section_heading" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
 
             <!-- <h2>Our Services</h2> -->
             <h2>خدماتنا</h2>
             <div class="heading-line"></div>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-6 padd_col_res">
+            <div class="col-lg-3 col-md-6 padd_col_res" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
                 <div class="service_box">
                     <i class="bs bs-scissors-1"></i>
                     <h3>قص الشعر</h3>
 
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 padd_col_res">
+            <div class="col-lg-3 col-md-6 padd_col_res" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <div class="service_box">
                     <i class="bs bs-razor-2"></i>
                     <h3>تشذيب اللحية</h3>
 
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 padd_col_res">
+            <div class="col-lg-3 col-md-6 padd_col_res" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
                 <div class="service_box">
                     <i class="bs bs-brush"></i>
                     <h3>حلاقة ناعمة</h3>
 
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 padd_col_res">
+            <div class="col-lg-3 col-md-6 padd_col_res" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                 <div class="service_box">
                     <i class="bs bs-hairbrush-1"></i>
                     <h3>ماسك للوجه</h3>
@@ -168,7 +167,7 @@
 
 <!-- PRICING SECTION  -->
 
-<section class="pricing_section" id="pricing" style="text-align:right;">
+<section class="pricing_section" id="pricing" style="text-align:right;" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
 
     <!-- START GET CATEGORIES PRICES FROM DATABASE -->
 
@@ -202,16 +201,16 @@
 
             <div class="col-lg-4 col-md-6 sm-padding">
                 <div class="price_wrap">
-                    <h3><?php echo $category['category_name'] ?></h3>
+                    <h3 data-aos="fade-up" data-aos-duration="800" data-aos-delay="150"><?php echo $category['category_name'] ?></h3>
                     <ul class="price_list">
                         <?php
                             foreach($services as $service)
                             {
                         ?>
                         <li>
-                            <h4><?php echo $service['service_name'] ?></h4>
-                            <p><?php echo $service['service_description'] ?></p>
-                            <span class="price"><?php echo $service['service_price'] ?>DH</span>
+                            <h4 data-aos="fade-up" data-aos-duration="800" data-aos-delay="150"><?php echo $service['service_name'] ?></h4>
+                            <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="150"><?php echo $service['service_description'] ?></p>
+                            <span class="price" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150"><?php echo $service['service_price'] ?>DH</span>
                         </li>
                         <?php
                             }
@@ -230,83 +229,84 @@
 
 <!-- TEAM SECTION -->
 
-<section id="team" class="team_section">
+<section id="team" class="team_section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
     <div class="container">
-        <div class="section_heading ">
+        <div class="section_heading " data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
             <h2>فريقنا</h2>
             <div class="heading-line"></div>
         </div>
         <ul class="team_members row">
-            <li class="col-lg-3 col-md-6 padd_col_res">
+            <li class="col-lg-3 col-md-6 padd_col_res" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
                 <div class="team_member">
                     <img src="Design/images/team-1.jpg" alt="Team Member">
                 </div>
             </li>
-            <!-- <li class="col-lg-3 col-md-6 padd_col_res">
+            <!-- <li class="col-lg-3 col-md-6 padd_col_res" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
                 <div class="team_member">
                     <img src="Design/images/team-2.jpg" alt="Team Member">
                 </div>
             </li> -->
-            <li class="col-lg-3 col-md-6 padd_col_res">
+            <li class="col-lg-3 col-md-6 padd_col_res" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <div class="team_member">
                     <img src="Design/images/team-3.jpg" alt="Team Member">
                 </div>
             </li>
-            <li class="col-lg-3 col-md-6 padd_col_res">
+            <li class="col-lg-3 col-md-6 padd_col_res" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
                 <div class="team_member">
                     <img src="Design/images/team-4.jpg" alt="Team Member">
                 </div>
             </li>
         </ul>
     </div>
+
 </section>
 
 <!-- GALLERY SECTION -->
 
-<section class="gallery-section" id="gallery">
+<section class="gallery-section" id="gallery" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
     <div class="section_heading">
 
-        <h2>عرض الصور</h2>
+        <h2>صور</h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
         <div class="heading-line"></div>
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-6 gallery-column">
+            <div class="col-lg-3 col-md-6 gallery-column" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
                 <div style="height: 230px">
                     <div class="gallery-img" style="background-image: url('Design/images/portfolio-1.jpg');"> </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 gallery-column">
+            <div class="col-lg-3 col-md-6 gallery-column" data-aos="fade-up" data-aos-duration="800" data-aos-delay="350">
                 <div style="height: 230px">
                     <div class="gallery-img" style="background-image: url('Design/images/portfolio-2.jpg');"></div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 gallery-column">
+            <div class="col-lg-3 col-md-6 gallery-column" data-aos="fade-up" data-aos-duration="800" data-aos-delay="450">
                 <div style="height: 230px">
                     <div class="gallery-img" style="background-image: url('Design/images/portfolio-3.jpg');"></div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 gallery-column">
+            <div class="col-lg-3 col-md-6 gallery-column" data-aos="fade-up" data-aos-duration="800" data-aos-delay="550">
                 <div style="height: 230px">
                     <div class="gallery-img" style="background-image: url('Design/images/portfolio-4.jpg');"></div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 gallery-column">
+            <div class="col-lg-3 col-md-6 gallery-column" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
                 <div style="height: 230px">
                     <div class="gallery-img" style="background-image: url('Design/images/portfolio-5.jpg');"></div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 gallery-column">
+            <div class="col-lg-3 col-md-6 gallery-column" data-aos="fade-up" data-aos-duration="800" data-aos-delay="350">
                 <div style="height: 230px">
                     <div class="gallery-img" style="background-image: url('Design/images/portfolio-6.jpg');"></div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 gallery-column">
+            <div class="col-lg-3 col-md-6 gallery-column" data-aos="fade-up" data-aos-duration="800" data-aos-delay="450">
                 <div style="height: 230px">
                     <div class="gallery-img" style="background-image: url('Design/images/portfolio-7.jpg');"></div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 gallery-column">
+            <div class="col-lg-3 col-md-6 gallery-column" data-aos="fade-up" data-aos-duration="800" data-aos-delay="550">
                 <div style="height: 230px">
                     <div class="gallery-img" style="background-image: url('Design/images/portfolio-8.jpg');"></div>
                 </div>
@@ -379,10 +379,10 @@
 
 <!-- CONTACT SECTION -->
 
-<section class="contact-section" id="contact-us" style="text-align:right;">
+<section class="contact-section" id="contact-us" style="text-align:right;" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 sm-padding">
+            <div class="col-lg-6 sm-padding" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
                 <div class="contact-info">
                     <h2>
                         تواصل معنا و <br>
@@ -398,7 +398,7 @@
                     </h4>
                 </div>
             </div>
-            <div class="col-lg-6 sm-padding">
+            <div class="col-lg-6 sm-padding" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <div class="contact-form">
                     <div id="contact_ajax_form" class="contactForm">
                         <div class="form-group colum-row row">
@@ -439,10 +439,10 @@
 
 <!-- WIDGET SECTION / FOOTER -->
 
-<section class="widget_section" style="text-align:right">
+<section class="widget_section" style="text-align:right" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <div class="footer_widget">
                     <div class="footer_logo" >
                         <img src="Design/images/barbershop_logo.png" alt="Brand" >
@@ -459,7 +459,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
                 <div class="footer_widget">
                     <h3>العنوان</h3>
                     <p>
@@ -481,7 +481,7 @@
                         </ul>
                     </div>
                 </div> -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                 <div class="footer_widget">
                     <h3 style="margin:0 0 20px">اشترك معنا</h3>
                     <div class="subscribe_form">

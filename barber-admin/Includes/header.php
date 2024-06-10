@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 	  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	  	<meta name="description" content="BarberTop Booking Space">
+	  	<meta name="description" content="BarberTop Booking Salon">
 
   		<title><?php echo $pageTitle ?></title>
 
@@ -139,7 +139,7 @@
 							<li class="nav-item">
 		              			<a class="nav-link" href="../" target="_blank">
 		              				<i class="far fa-eye"></i>
-		                			<span style="margin-left: 5px;">View website</span>
+		                			<span class="viewebsite" style="margin-left: 5px;">View website</span>
 		              			</a>
 		          			</li>
 							<div class="topbar-divider d-none d-sm-block"></div>
@@ -147,8 +147,8 @@
 							<!-- Nav Item - User Information -->
 							<li class="nav-item dropdown no-arrow">
 					  			<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<span class="mr-2 d-none d-lg-inline text-gray-600 small">
-										<?php echo $_SESSION['username_barbershop_Xw211qAAsq4']; ?>
+									<span class="mr-2 d-none d-s-inline text-gray-600 small adminemail">
+										<?php echo $_SESSION['admin_email_barbertop']; ?>
 									</span>
 									<i class="fas fa-caret-down"></i>
 								</a>

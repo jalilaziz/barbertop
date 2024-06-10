@@ -31,8 +31,8 @@
     <!-- Clients Table -->
 
     <?php
-                
-        $stmt = $con->prepare("SELECT * FROM clients");
+        $employee_id = $_SESSION['employee_id_barbertop'];  
+        $stmt = $con->prepare("SELECT * FROM clients WHERE employee_id= $employee_id");
         $stmt->execute();
         $rows_clients = $stmt->fetchAll(); 
 

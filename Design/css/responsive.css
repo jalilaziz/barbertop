@@ -56,6 +56,12 @@
 	.maps, .footer_widget, .col-lg-4 {
 		width:100%;
 	}
+	.book_section {
+		padding: 50px 0px;
+	}
+	.appointment_form .book_content {
+		margin-bottom: 0px;
+	}
 
 }
 

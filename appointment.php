@@ -16,93 +16,71 @@
 <section class="booking_section">
 	<div class="container">
 
-		<?php
+	<?php
 
-            if(isset($_POST['submit_book_appointment_form']) && $_SERVER['REQUEST_METHOD'] === 'POST')
-            {
-            	// Selected SERVICES
+if(isset($_POST['submit_book_appointment_form']) && $_SERVER['REQUEST_METHOD'] === 'POST')
+{
+    // Selected SERVICES
+    $selected_services = $_POST['selected_services'];
 
-                $selected_services = $_POST['selected_services'];
+    // Selected EMPLOYEE
+    $selected_employee = $_POST['selected_employee'];
 
-                // Selected EMPLOYEE
+    // Selected DATE+TIME
+    $selected_date_time = explode(' ', $_POST['desired_date_time']);
+    $date_selected = $selected_date_time[0];
+    $start_time = $date_selected . " " . $selected_date_time[1];
+    $end_time = $date_selected . " " . $selected_date_time[2];
 
-                $selected_employee = $_POST['selected_employee'];
+    // Client Details
+    $client_first_name = test_input($_POST['client_first_name']);
+    $client_last_name = test_input($_POST['client_last_name']);
+    $client_phone_number = test_input($_POST['client_phone_number']);
+    $client_email = test_input($_POST['client_email']);
 
-                // Selected DATE+TIME
+    try {
+        $con->beginTransaction();
 
-                $selected_date_time = explode(' ', $_POST['desired_date_time']);
+        // Check if the client's email already exists in our database
+        $stmtCheckClient = $con->prepare("SELECT * FROM clients WHERE client_email = ?");
+        $stmtCheckClient->execute([$client_email]);
+        $client_result = $stmtCheckClient->fetch();
+        $client_count = $stmtCheckClient->rowCount();
 
-                $date_selected = $selected_date_time[0];
-                $start_time = $date_selected." ".$selected_date_time[1];
-                $end_time = $date_selected." ".$selected_date_time[2];
+        if($client_count > 0) {
+            $client_id = $client_result["client_id"];
+        } else {
+            $stmtClient = $con->prepare("INSERT INTO clients (first_name, last_name, phone_number, client_email, employee_id) VALUES (?, ?, ?, ?, ?)");
+            $stmtClient->execute([$client_first_name, $client_last_name, $client_phone_number, $client_email, $selected_employee]);
 
+            $client_id = $con->lastInsertId();
+        }
 
-                //Client Details
+        $stmt_appointment = $con->prepare("INSERT INTO appointments (date_created, client_id, employee_id, start_time, end_time_expected) VALUES (?, ?, ?, ?, ?)");
+        $stmt_appointment->execute([date("Y-m-d H:i"), $client_id, $selected_employee, $start_time, $end_time]);
 
-                $client_first_name = test_input($_POST['client_first_name']);
-                $client_last_name = test_input($_POST['client_last_name']);
-                $client_phone_number = test_input($_POST['client_phone_number']);
-                $client_email = test_input($_POST['client_email']);
+        $appointment_id = $con->lastInsertId();
 
-                $con->beginTransaction();
+        foreach($selected_services as $service) {
+            $stmt = $con->prepare("INSERT INTO services_booked (appointment_id, service_id) VALUES (?, ?)");
+            $stmt->execute([$appointment_id, $service]);
+        }
 
-                try
-                {
-					// Check If the client's email already exist in our database
-					$stmtCheckClient = $con->prepare("SELECT * FROM clients WHERE client_email = ?");
-                    $stmtCheckClient->execute(array($client_email));
-					$client_result = $stmtCheckClient->fetch();
-					$client_count = $stmtCheckClient->rowCount();
+        echo "<div class='alert alert-success' style='text-align:right;font-size:18px;'>";
+        echo "شكرا لك لقد تم حجز موعدك بنجاح.<br> سيتم الاتصال بك للتأكيد.";
+        echo "</div>";
 
-					if($client_count > 0)
-					{
-						$client_id = $client_result["client_id"];
-					}
-					else
-					{
-						$stmtgetCurrentClientID = $con->prepare("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'barbershop' AND TABLE_NAME = 'clients'");
-            
-						$stmtgetCurrentClientID->execute();
-						$client_id = $stmtgetCurrentClientID->fetch();
+        $con->commit();
+    } catch(Exception $e) {
+        $con->rollBack();
+        echo "<div class='alert alert-danger'>"; 
+        echo $e->getMessage();
+        echo "</div>";
+    }
+}
 
-						$stmtClient = $con->prepare("insert into clients(first_name,last_name,phone_number,client_email) 
-									values(?,?,?,?)");
-						$stmtClient->execute(array($client_first_name,$client_last_name,$client_phone_number,$client_email));
-					}
+?>
 
-
-                    
-
-                    $stmtgetCurrentAppointmentID = $con->prepare("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'barbershop' AND TABLE_NAME = 'appointments'");
-            
-                    $stmtgetCurrentAppointmentID->execute();
-                    $appointment_id = $stmtgetCurrentAppointmentID->fetch();
-                    
-                    $stmt_appointment = $con->prepare("insert into appointments(date_created, client_id, employee_id, start_time, end_time_expected ) values(?, ?, ?, ?, ?)");
-                    $stmt_appointment->execute(array(Date("Y-m-d H:i"),$client_id[0],$selected_employee,$start_time,$end_time));
-
-                    foreach($selected_services as $service)
-                    {
-                        $stmt = $con->prepare("insert into services_booked(appointment_id, service_id) values(?, ?)");
-                        $stmt->execute(array($appointment_id[0],$service));
-                    }
-                    
-                    echo "<div class = 'alert alert-success' style='text-align:right;font-size:18px;'>";
-                        echo "شكرا لك لقد تم حجز موعدك بنجاح.<br> سيتم الاتصال بك للتأكيد.";
-                    echo "</div>";
-
-                    $con->commit();
-                }
-                catch(Exception $e)
-                {
-                    $con->rollBack();
-                    echo "<div class = 'alert alert-danger'>"; 
-                        echo $e->getMessage();
-                    echo "</div>";
-                }
-            }
-
-        ?>
 
 		<!-- RESERVATION FORM -->
 

@@ -151,16 +151,30 @@ input:focus .border
   margin: 0;
 }
 
+.loginasbarber 
+{
+    font-size: 15px;
+    color: #555555;
+    line-height: 1.2;
+    /* text-align: right; */
+    /* float: left; */
+    width: 150px;
+    display: block;
+    padding-top: 10px;
+}
 .login100-form-title 
 {
     font-size: 30px;
     color: #555555;
     line-height: 1.2;
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
     width: 100%;
     display: block;
     padding-bottom: 20px;
+}
+.swal-button, .swal-button:not([disabled]):hover {
+    background-color: #4e453e o !important;
 }
 
 .txt1

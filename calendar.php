@@ -64,14 +64,17 @@
             .available_booking_hour:hover
             {
                 font-weight: 700;
+                background-color: #4caf50;
+                color: white;
             }
 
             .available_booking_hour
             {
-                font-size: 14px;
-                padding-top:25px;
+                font-size: 16px;
+                padding: 5px 5px 5px;
                 line-height: 1.3;
                 cursor: pointer;
+                border-radius: 5px;
             }
 
 
@@ -83,6 +86,8 @@
             input[type="radio"]:checked + label 
             {
                 font-weight: 700;
+                background-color: #4caf50;
+                color: white;
             }
 
             .available_booking_hours_colum
@@ -106,7 +111,7 @@
                     
                     $appointment_date = date('Y-m-d');
 
-                    for($i = 0; $i < 10; $i++)
+                    for($i = 0; $i < 7; $i++)
                     {
                         $appointment_date = date('Y-m-d', strtotime($appointment_date . ' +1 day'));
                         echo "<div class = 'appointment_day'>";
@@ -159,7 +164,7 @@
 
                     $appointment_date = date('Y-m-d');
 
-                    for($i = 0; $i < 10; $i++)
+                    for($i = 0; $i < 7; $i++)
                     {
                         echo "<div class='available_booking_hours_colum'>";
 

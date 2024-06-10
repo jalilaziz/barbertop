@@ -20,7 +20,7 @@
                         </ul>
                     </div>
                     <div class="header-btn" style="margin-left:10px">
-                        <a href="appointment.php" class="menu-btn">احجز موعدًا</a>
+                        <a href="appointment.php" class="menu-btn default_btn">احجز موعدًا</a>
                     </div>
                 </div>
                 <a class="mob-menu-toggle">

@@ -245,7 +245,7 @@
                                 <!-- SUBMIT BUTTON -->
 
                                 <button type="submit" name="add_new_admin" class="btn btn-primary">Add admin</button>
-
+                                <a type="button" class="btn btn-secondary" data-dismiss="modal" href="admin-profile.php">Cancel</a>
                             </form>
 
                             <?php
@@ -412,6 +412,7 @@
                                         <button type="submit" name="edit_admin_sbmt" class="btn btn-primary">
                                             Edit admin
                                         </button>
+                                        <a type="button" class="btn btn-secondary" data-dismiss="modal" href="admin-profile.php">Cancel</a>
                                     </form>
                                     <?php
                                         /*** EDIT admin ***/

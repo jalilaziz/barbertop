@@ -43,22 +43,23 @@
 
                 if($do == 'Manage')
                 {
-                    $stmt = $con->prepare("SELECT * FROM employees");
+                    $email = $_SESSION['email_barbertop'];
+                    $stmt = $con->prepare("SELECT * FROM employees WHERE email = '$email'");
                     $stmt->execute();
                     $rows_employees = $stmt->fetchAll(); 
 
                     ?>
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h5 class="m-0 font-weight-bold text-primary">Employees</h5>
+                                <h5 class="m-0 font-weight-bold text-primary">Barber Profile</h5>
                             </div>
                             <div class="card-body">
                                 
                                 <!-- ADD NEW Employee BUTTON -->
-                                <a href="employees.php?do=Add" class="btn btn-success btn-sm" style="margin-bottom: 10px;">
+                                <!-- <a href="barber-profile.php?do=Add" class="btn btn-success btn-sm" style="margin-bottom: 10px;">
                                     <i class="fa fa-plus"></i> 
                                     Add Employee
-                                </a>
+                                </a> -->
 
                                 <!-- Employees Table -->
                                 <div class="table-responsive">
@@ -90,7 +91,6 @@
                                                             echo $employee['email'];
                                                         echo "</td>";
                                                         echo "<td>";
-                                                            $delete_data = "delete_employee_".$employee["employee_id"];
                                                     ?>
                                                         <ul class="list-inline m-0">
 
@@ -98,38 +98,10 @@
 
                                                             <li class="list-inline-item" data-toggle="tooltip" title="Edit">
                                                                 <button class="btn btn-success btn-sm rounded-0">
-                                                                    <a href="employees.php?do=Edit&employee_id=<?php echo $employee['employee_id']; ?>" style="color: white;">
+                                                                    <a href="barber-profile.php?do=Edit&employee_id=<?php echo $employee['employee_id']; ?>" style="color: white;">
                                                                         <i class="fa fa-edit"></i>
                                                                     </a>
                                                                 </button>
-                                                            </li>
-
-                                                            <!-- DELETE BUTTON -->
-
-                                                            <li class="list-inline-item" data-toggle="tooltip" title="Delete">
-                                                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="modal" data-target="#<?php echo $delete_data; ?>" data-placement="top"><i class="fa fa-trash"></i></button>
-
-                                                                <!-- Delete Modal -->
-
-                                                                <div class="modal fade" id="<?php echo $delete_data; ?>" tabindex="-1" role="dialog" aria-labelledby="<?php echo $delete_data; ?>" aria-hidden="true">
-                                                                    <div class="modal-dialog" role="document">
-                                                                        <div class="modal-content">
-                                                                            <div class="modal-header">
-                                                                                <h5 class="modal-title" id="exampleModalLabel">Delete Employee</h5>
-                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                                    <span aria-hidden="true">&times;</span>
-                                                                                </button>
-                                                                            </div>
-                                                                            <div class="modal-body">
-                                                                                Are you sure you want to delete this employee?
-                                                                            </div>
-                                                                            <div class="modal-footer">
-                                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                                                <button type="button" data-id = "<?php echo $employee['employee_id']; ?>" class="btn btn-danger delete_employee_bttn">Delete</button>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
                                                             </li>
                                                         </ul>
                                                     <?php
@@ -153,7 +125,7 @@
                             <h6 class="m-0 font-weight-bold text-primary">Add New Employee</h6>
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="employees.php?do=Add">
+                            <form method="POST" action="barber-profile.php?do=Add">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -273,7 +245,7 @@
                                             <script type="text/javascript">
                                                 swal("New Employee","The new employee has been inserted successfully", "success").then((value) => 
                                                 {
-                                                    window.location.replace("employees.php");
+                                                    window.location.replace("barber-profile.php");
                                                 });
                                             </script>
 
@@ -309,10 +281,10 @@
                             ?>
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Edit Employee</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Edit Profile</h6>
                                 </div>
                                 <div class="card-body">
-                                    <form method="POST" action="employees.php?do=Edit&employee_id=<?php echo $employee_id; ?>">
+                                    <form method="POST" action="barber-profile.php?do=Edit&employee_id=<?php echo $employee_id; ?>">
                                         <!-- Employee ID -->
                                         <input type="hidden" name="employee_id" value="<?php echo $employee['employee_id'];?>">
 
@@ -405,12 +377,36 @@
                                                     ?>
                                                 </div>
                                             </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group"> 
+                                                    <label for="password">Password</label>
+                                                    <input type="password" class="form-control" value="<?php 
+                                                    echo $employee['password'] 
+                                                    ?>" placeholder="Password" name="password">
+                                                    <?php
+                                                        if(isset($_POST['edit_employee_sbmt']))
+                                                        {
+                                                            if(empty(test_input($_POST['password'])))
+                                                            {
+                                                                ?>
+                                                                    <div class="invalid-feedback" style="display: block;">
+                                                                        Password is required.
+                                                                    </div>
+                                                                <?php
+
+                                                                $flag_edit_employee_form = 1;
+                                                            }
+                                                        }
+                                                    ?>
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <!-- SUBMIT BUTTON -->
                                         <button type="submit" name="edit_employee_sbmt" class="btn btn-primary">
-                                            Edit employee
+                                            Edit Profile
                                         </button>
+                                        <a type="button" class="btn btn-secondary" data-dismiss="modal" href="barber-profile.php">Cancel</a>
                                     </form>
                                     <?php
                                         /*** EDIT EMPLOYEE ***/
@@ -431,9 +427,9 @@
                                                     <!-- SUCCESS MESSAGE -->
 
                                                     <script type="text/javascript">
-                                                        swal("Employee Updated","The employee has been updated successfully", "success").then((value) => 
+                                                        swal("Profile has been updated successfully").then((value) => 
                                                         {
-                                                            window.location.replace("employees.php");
+                                                            window.location.replace("barber-profile.php");
                                                         });
                                                     </script>
 
@@ -455,13 +451,13 @@
                         }
                         else
                         {
-                            header('Location: employees.php');
+                            header('Location: barber-profile.php');
                             exit();
                         }
                     }
                     else
                     {
-                        header('Location: employees.php');
+                        header('Location: barber-profile.php');
                         exit();
                     }
                 }

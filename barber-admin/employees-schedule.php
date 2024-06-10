@@ -59,9 +59,9 @@
                         </form>
                     </div>
                     
-                    <div class="alert alert-info">
+                    <!-- <div class="alert alert-info">
                         Configure your week settings here. Just select start time and end time to set up employees working hours.
-                    </div>
+                    </div> -->
                     
                     
                     <!-- SECHEDULE PART -->

@@ -17,6 +17,9 @@
 		<script src="Design/js/bootstrap.min.js"></script>
 		<script src="Design/js/bootstrap.bundle.min.js"></script>
 		<script src="Design/js/main.js"></script>
+		<script>
+    		AOS.init();
+		</script>
 
 	</body>
 

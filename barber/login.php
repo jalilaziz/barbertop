@@ -35,9 +35,12 @@
 	<body>
 		<div class="login">
 			<form class="login-container validate-form" name="login-form" method="POST" action="login.php" onsubmit="return validateLogInForm()">
-				<span class="login100-form-title p-b-32">
-					Barber Login
-				</span>
+			<div style="display:flex;">
+					<span class="login100-form-title p-b-32">
+						Barber Login
+					</span>
+					<a href="../barber-admin" class="loginasadmin">Log in as an Admin</a>
+				</div>
 
 				<!-- PHP SCRIPT WHEN SUBMIT -->
 
@@ -76,7 +79,7 @@
 									<span aria-hidden="true">×</span>
 								</button>
 								<div class="messages">
-									<div>Email and/or password are incorrect!</div>
+									<div style="color:red;">Email and/or password are incorrect!</div>
 								</div>
 							</div>
 

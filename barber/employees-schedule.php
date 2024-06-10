@@ -37,12 +37,13 @@
                     <div class="sb-entity-selector" style="max-width:300px;">
                         <form action="employees-schedule.php" method="POST">
                             <div class="form-group">
-                                <label class="control-label" for="emloyee_schedule_select">
+                                <!-- <label class="control-label" for="emloyee_schedule_select">
                                     Select employee to set up the schedule:
-                                </label>
+                                </label> -->
                                 <div style="display:inline-block;margin-bottom: 10px;">
                                     <?php 
-                                        $stmt = $con->prepare('SELECT * FROM employees');
+                                        $employee_id = $_SESSION['employee_id_barbertop'];
+                                        $stmt = $con->prepare("SELECT * FROM employees WHERE employee_id = $employee_id");
                                         $stmt->execute();
                                         $employees = $stmt->fetchAll();
                                     
@@ -59,9 +60,9 @@
                         </form>
                     </div>
                     
-                    <div class="alert alert-info">
+                    <!-- <div class="alert alert-info">
                         Configure your week settings here. Just select start time and end time to set up employees working hours.
-                    </div>
+                    </div> -->
                     
                     
                     <!-- SECHEDULE PART -->

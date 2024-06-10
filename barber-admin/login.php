@@ -35,10 +35,12 @@
 	<body>
 		<div class="login">
 			<form class="login-container validate-form" name="login-form" method="POST" action="login.php" onsubmit="return validateLogInForm()">
-				<span class="login100-form-title p-b-32">
-					Admin Login
-				</span>
-
+				<div style="display:flex;">
+					<span class="login100-form-title p-b-32">
+						Admin Login
+					</span>
+					<a href="../barber" class="loginasbarber">Log in as a Barber</a>
+				</div>
 				<!-- PHP SCRIPT WHEN SUBMIT -->
 
 				<?php
@@ -73,10 +75,10 @@
 
 							<div class="alert alert-danger">
 								<button data-dismiss="alert" class="close close-sm" type="button">
-									<span aria-hidden="true">×</span>
+									<span aria-hidden="true">X</span>
 								</button>
 								<div class="messages">
-									<div>Email and/or password are incorrect!</div>
+									<div style="color:red;">Email and/or password are incorrect!</div>
 								</div>
 							</div>
 
@@ -91,7 +93,7 @@
 				<div class="form-input">
 					<span class="txt1">Email</span>
 					<input type="text" name="admin_email" class = "form-control" oninput = "getElementById('required_email').style.display = 'none'" autocomplete="off">
-					<span class="invalid-feedback" id="required_email">email is required!</span>
+					<span class="invalid-feedback" id="required_email">Email is required!</span>
 				</div>
 				
 				<!-- PASSWORD INPUT -->

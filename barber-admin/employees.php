@@ -431,7 +431,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group"> 
                                                     <label for="password">Password</label>
-                                                    <input type="text" class="form-control" value="<?php 
+                                                    <input type="password" class="form-control" value="<?php 
                                                     echo $employee['password'] 
                                                     ?>" placeholder="Password" name="password">
                                                     <?php
