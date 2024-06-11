@@ -408,7 +408,7 @@
                                                 echo $row['start_time'];
                                             echo "</td>";
                                             echo "<td>";
-                                                echo $row['last_name'];
+                                                echo $row['first_name'] ." ". $row['last_name'];
                                             echo "</td>";
                                             echo "<td>";
                                                 
