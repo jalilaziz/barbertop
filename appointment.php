@@ -249,7 +249,7 @@ if(isset($_POST['submit_book_appointment_form']) && $_SERVER['REQUEST_METHOD'] =
 							<span class = "invalid-feedback">بريد إلكتروني غير صالح</span>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text"  name="client_phone_number" id="client_phone_number" class="form-control" placeholder="رقم الهاتف">
+                            <input type="number"  name="client_phone_number" id="client_phone_number" class="form-control" placeholder="رقم الهاتف">
 							<span class = "invalid-feedback">رقم هاتف غير صالح</span>
 						</div>
                     </div>
