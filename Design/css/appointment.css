@@ -126,6 +126,7 @@ body
     color: rgb(151, 151, 151);
     line-height: 1.29;
     font-size: 14px;
+    direction: ltr;
 }
 
 .service_price_field

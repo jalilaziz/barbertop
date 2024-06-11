@@ -55,16 +55,15 @@
             <div class="col-md-6">
                 <div class="about_content" style="text-align: center;">
 
-                    <h2>Barber Top</h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+                    <h2>BARBERTOP</h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
                     <div class="about-logo" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
                         <img src="Design/images/about-logo.png" width=100% alt="logo">
-                    </div>
-                    <p style="color: #777" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+                    </div><br>
+                    <p style="color: #777;margin-top:16px;" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
                     مرحبًا بكم في صالون BARBERTOP، وجهتك المثالية لتجربة حلاقة فريدة ومميزة! نسعى لتقديم أفضل الخدمات لعملائنا الكرام، حيث نجمع بين الخبرة والابتكار لضمان حصولك على إطلالة رائعة وأنيقة.
                     <br>
-
-في صالون BARBERTOP، نؤمن بأن الحلاقة هي فن وعناية. فريقنا من الحلاقين المحترفين يتمتعون بمهارات عالية ويستخدمون أحدث الأدوات والتقنيات ليقدموا لك خدمات متنوعة. <br>
-نتطلع إلى استقبالك في صالون BARBERTOP، لنقدم لك أفضل تجربة حلاقة وعناية رجالية في المدينة. زيارتك ستكون بداية رحلة مليئة بالأناقة والثقة!
+ فريقنا من الحلاقين المحترفين يتمتعون بمهارات عالية ويستخدمون أحدث الأدوات والتقنيات ليقدموا لك خدمات متنوعة. <br>
+زيارتك ستكون بداية رحلة مليئة بالأناقة والثقة!
                     </p>
                     <!-- <a href="#" class="default_btn" style="opacity: 1;">More about us</a> -->
                 </div>
@@ -82,7 +81,7 @@
 
 <!-- HOME SECTION -->
 
-<section class="home-section height90vh" id="home-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+<!-- <section class="home-section height90vh" id="home-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
     <div class="home-section-content height90vh">
         <div id="home-section-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-caption d-md-block">
@@ -94,19 +93,19 @@
                 <li data-target="#home-section-carousel" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner height90vh">
-                <!-- FIRST SLIDE -->
+                
                 <div class="carousel-item height90vh active">
                     <img class="d-block w-100 slideimg1" src="Design/images/barbershop_image_1.jpg" alt="First slide">
                     
                 </div>
-                <!-- SECOND SLIDE -->
+                
                 <div class="carousel-item height90vh">
                     <img class="d-block w-100 slideimg1" src="Design/images/barbershop_image_2.jpg" alt="Second slide">
                     <div class="carousel-caption d-md-block">
                         
                     </div>
                 </div>
-                <!-- THIRD SLIDE -->
+                
                 <div class="carousel-item height90vh">
                     <img class="d-block w-100 slideimg1" src="Design/images/barbershop_image_3.jpg" alt="Third slide">
                     <div class="carousel-caption d-md-block">
@@ -114,7 +113,7 @@
                     </div>
                 </div>
             </div>
-            <!-- PREVIOUS & NEXT -->
+            
             <a class="carousel-control-prev height90vh" href="#home-section-carousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -125,7 +124,7 @@
             </a>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- SERVICES SECTION -->
 

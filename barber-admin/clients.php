@@ -56,10 +56,10 @@
                             <div class="card-body">
                                 
                                 <!-- ADD NEW client BUTTON -->
-                                <a href="clients.php?do=Add" class="btn btn-success btn-sm" style="margin-bottom: 10px;">
+                                <!-- <a href="clients.php?do=Add" class="btn btn-success btn-sm" style="margin-bottom: 10px;">
                                     <i class="fa fa-plus"></i> 
                                     Add client
-                                </a>
+                                </a> -->
 
                                 <!-- clients Table -->
                                 <div class="table-responsive">
